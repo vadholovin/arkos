@@ -1,0 +1,32 @@
+include services.data.pug
+
+section.section.bg-secondary.services
+  .layout
+    header.section__header.services__header
+      h2.section__title Услуги компании
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+    .service-grid.js-service-grid#service-grid
+      each card, index in services
+        - var num = index + 1
+        - var headingID = "service-heading-" + num
+        - var bodyID = "service-body-" + num
+
+        .service-card
+          a.service-card__img(href="")
+            img(src="assets/img/content/services/" + card.img, alt="")
+          .service-card__header(id=headingID)
+            span.service-card__price от 15 000 000 руб.
+            h5.mb-0
+              button.service-card__btn(
+                type='button'
+                data-target='#' + bodyID
+                aria-controls=bodyID
+              )!= card.title
+          .service-card__body(
+            id=bodyID
+            aria-labelledby=headingID
+            data-parent='#service-grid'
+          )
+            .service-card__text= card.text
+            a.service-card__link.link.link--with-arrow(href="") Подробнее об услуге

@@ -1,0 +1,22 @@
+include header.data.pug
+
+
+header.header
+  .layout
+    .header__inner
+      a.header__logo.logo
+        img.logo__img(src="assets/img/general/logo-full.svg", alt="Логотип Аркос")
+
+      nav.header__nav
+        ul.header-menu.header-menu--inline
+          each item in menu
+            li
+              a(href="")= item
+
+      ul.phonelist.phonelist--no-icons.header__phonelist
+        li.phonelist__item
+          a.phonelist__link(href="") +7 (495) 123-45-67
+          span.phonelist__text Пн-Пт с 10:00 до 18:00
+        li.phonelist__item
+          a.phonelist__link(href="") 8 (800) 123-45-67
+          a.accent-link(href="") Перезвоните мне

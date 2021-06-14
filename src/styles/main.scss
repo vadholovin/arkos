@@ -1,0 +1,119 @@
+@charset 'UTF-8';
+
+
+// BOOTSTRAP 4 VARIABLES
+
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+// BOOTSTRAP 4 IMPORTS
+
+@import "vendors/bootstrap/root";
+@import "vendors/bootstrap/reboot";
+@import "vendors/bootstrap/type";
+@import "vendors/bootstrap/images";
+// @import "vendors/bootstrap/code";
+// @import "vendors/bootstrap/grid";
+// @import "vendors/bootstrap/tables";
+@import "vendors/bootstrap/forms";
+@import "vendors/bootstrap/buttons";
+@import "vendors/bootstrap/transitions";
+@import "vendors/bootstrap/dropdown";
+// @import "vendors/bootstrap/button-group";
+@import "vendors/bootstrap/input-group";
+// @import "vendors/bootstrap/custom-forms";
+@import "vendors/bootstrap/nav";
+@import "vendors/bootstrap/navbar";
+// @import "vendors/bootstrap/card";
+@import "vendors/bootstrap/breadcrumb";
+// @import "vendors/bootstrap/pagination";
+// @import "vendors/bootstrap/badge";
+// @import "vendors/bootstrap/jumbotron";
+// @import "vendors/bootstrap/alert";
+// @import "vendors/bootstrap/progress";
+@import "vendors/bootstrap/media";
+@import "vendors/bootstrap/list-group";
+@import "vendors/bootstrap/close";
+// @import "vendors/bootstrap/toasts";
+@import "vendors/bootstrap/modal";
+// @import "vendors/bootstrap/tooltip";
+// @import "vendors/bootstrap/popover";
+// @import "vendors/bootstrap/carousel";
+// @import "vendors/bootstrap/spinners";
+@import "vendors/bootstrap/utilities";
+// @import "vendors/bootstrap/print";
+
+
+@import "swiper/src/swiper";
+@import "swiper/src/components/a11y/a11y";
+@import "swiper/src/components/lazy/lazy";
+@import "swiper/src/components/effect-fade/effect-fade";
+@import "swiper/src/components/navigation/navigation";
+@import "swiper/src/components/pagination/pagination";
+@import "swiper/src/components/scrollbar/scrollbar";
+@import "swiper/src/components/thumbs/thumbs";
+
+
+@import "settings/breakpoints";
+@import "settings/animations";
+@import "settings/typography";
+@import 'sass-mq/mq';
+
+
+@import "tools/tools";
+
+
+// @import "elements/body";
+
+
+// @import "objects/wrappers";
+// @import "objects/layout";
+// @import "objects/grid";
+
+
+// @import "../modules/icon/icon";
+// @import "../modules/content-zone/content-zone";
+// @import "../modules/burger/burger";
+// @import "components/buttons";
+// @import "components/forms";
+// @import "components/breadcrumb";
+// @import "components/image";
+// @import "components/logo";
+// @import "components/header-menu";
+// @import "components/footer-menu";
+// @import "components/contact-list";
+// @import "components/form-box";
+// @import "components/section";
+// @import "components/modals";
+// @import "components/popup";
+// @import "components/swiper";
+// @import "components/card";
+// @import "components/benefits-list";
+// @import "components/services-grid";
+// @import "components/news-grid";
+// @import "components/projects-grid";
+// @import "components/map";
+// @import "components/post";
+// @import "components/widget";
+// @import "components/simple-cards";
+// @import "components/tabs-with-sidebar";
+
+// @import "components/header";
+// @import "components/mobile-nav";
+
+// @import "components/top-slider";
+// @import "components/section-about";
+// @import "components/section-services";
+// @import "components/section-callback";
+// @import "components/section-contacts";
+// @import "components/section-price";
+// @import "components/section-team";
+// @import "components/section-docs";
+// @import "components/section-current-services";
+// @import "components/project-post";
+// @import "components/service-post";
+
+
+// @import "components/footer";
+

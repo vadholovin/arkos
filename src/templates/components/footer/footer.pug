@@ -1,0 +1,89 @@
+include footer.data.pug
+
+footer.footer
+  .footer__grid.layout
+    .footer__info
+      a.logo.footer__logo(href="")
+        img.logo__img(src="assets/img/general/logo.svg", alt="")
+
+      ul.phonelist.footer__phonelist
+        li.phonelist__item
+          a.phonelist__link(href="") 8(800) 123 45-67
+          span.phonelist__text Бесплатно из регионов РФ
+
+        li.phonelist__item
+          a.phonelist__link(href="") +7(495) 123 45-67
+          span.phonelist__text г. Москва
+
+      .footer__info
+        p.footer__info-text
+          | Проектирование промышленных зданий и сооружений<br>
+          | ООО Фирма “АРКОС”
+
+        a.footer__info-link(href="") www.arkos.proekt.ru
+        a.accent-link(href="") Города проектирования
+
+    .footer__main
+      .footer__main-col
+        h2.footer__main-title О компании
+        ul.footer-menu
+          li
+            a(href="") О нас
+          li
+            a(href="") История компании
+          li
+            a(href="") Наши проекты
+          li
+            a(href="") Цены
+          li
+            a(href="") Реквизиты
+          li
+            a(href="") Документация
+          li
+            a(href="") Новости
+          li
+            a(href="") Статьи
+
+        ul.social.social--light.footer__social
+          li.social__item
+            a.social__item(href="")
+              +icon('facebook')
+          li.social__item
+            a.social__item(href="")
+              +icon('whatsapp')
+          li.social__item
+            a.social__item(href="")
+              +icon('instagram')
+
+      .footer__main-col
+        h2.footer__main-title Услуги проектирования
+        ul.footer-menu
+          li
+            a(href="") Пицевые производства
+          li
+            a(href="") Сельскохозяйственные производства
+          li
+            a(href="") Химические заводы
+          li
+            a(href="") Административные здания
+          li
+            a(href="") Складские здания
+          li
+            a(href="") Логистические комплексы
+          li
+            a(href="") Здания непищевой промышленности
+          li
+            a(href="") Индустриальные парки
+
+        a.link(href="") Политика конфиденциальности
+
+      .footer__main-col
+        h2.footer__main-title Полезное
+        ul.footer-menu
+          li
+            a(href="") Важное для заказчика
+          li
+            a(href="") Ответы на вопросы
+
+        a.accent-link(href="") Наши контакты
+        .footer__map#footer-map
