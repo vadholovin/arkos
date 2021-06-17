@@ -1,5 +1,49 @@
 @charset 'UTF-8';
 
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+font-family: 'Proxima Nova';
+src: url('../fonts/ProximaNova-Extrabld.woff2') format('woff2'),
+    url('../fonts/ProximaNova-Extrabld.woff') format('woff');
+font-weight: 800;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Black.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 // BOOTSTRAP 4 VARIABLES
 
@@ -23,8 +67,8 @@
 // @import "vendors/bootstrap/button-group";
 @import "vendors/bootstrap/input-group";
 // @import "vendors/bootstrap/custom-forms";
-@import "vendors/bootstrap/nav";
-@import "vendors/bootstrap/navbar";
+// @import "vendors/bootstrap/nav";
+// @import "vendors/bootstrap/navbar";
 // @import "vendors/bootstrap/card";
 @import "vendors/bootstrap/breadcrumb";
 // @import "vendors/bootstrap/pagination";
@@ -55,13 +99,32 @@
 @import "swiper/src/components/thumbs/thumbs";
 
 
-@import "settings/breakpoints";
-@import "settings/animations";
-@import "settings/typography";
+@import "1-settings/breakpoints";
+@import "1-settings/animations";
+@import "1-settings/typography";
 @import 'sass-mq/mq';
 
 
-@import "tools/tools";
+@import "3-tools/tools";
+
+
+@import "6-skeleton/layouts";
+
+
+@import "../modules/icon/icon.scss";
+@import "7-components/accent-link";
+@import "7-components/social";
+@import "7-components/map";
+
+@import "7-components/header";
+
+@import "7-components/phonelist";
+
+@import "7-components/footer";
+
+
+@import "8-utilities/text";
+// @import "7-components/modals";
 
 
 // @import "elements/body";

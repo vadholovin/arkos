@@ -1,0 +1,24 @@
+///* ==========================================================================
+//   #BREAKPOINTS-VARIABLES
+//   ========================================================================== */
+
+
+$bkp-xs: 0 !default;
+$bkp-sm: 576px !default;
+$bkp-md: 768px !default;
+$bkp-lg: 1024px !default;
+$bkp-xl: 1400px !default;
+
+$global-breakpoints: (
+  xs: $bkp-xs,
+  sm: $bkp-sm,
+  md: $bkp-md,
+  lg: $bkp-lg,
+  xl: $bkp-xl,
+);
+
+// /**
+//  * Breakpoints needed for sass-mq mixin
+//  */
+
+$mq-breakpoints: $global-breakpoints !default;

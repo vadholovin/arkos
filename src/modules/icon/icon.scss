@@ -2,7 +2,7 @@
    #ICON
    ========================================================================== */
 
-.icon {
+.svg-icon {
   display: inline-flex;
   vertical-align: middle;
   flex-shrink: 0;
@@ -22,15 +22,7 @@
   }
 }
 
-.icon--stroked {
+.svg-icon--stroked {
   fill: none;
   stroke: currentColor;
-}
-
-.icon--luminous {
-  filter: drop-shadow(0px 4px 4px #D55CFF);
-}
-
-.icon--translucent {
-  opacity: 0.5;
 }

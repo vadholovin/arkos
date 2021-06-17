@@ -1,0 +1,15 @@
+///* ==========================================================================
+//   #ELLIPSIS
+//   ========================================================================== */
+
+// Mixin to apply text-ellipsis to an element
+
+// @include ellipsis(15px, 1.5, 3);
+
+@mixin ellipsis($font-size, $line-height, $lines) {
+  display: -webkit-box;
+  max-height: calc($font-size * $line-height * $lines);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}

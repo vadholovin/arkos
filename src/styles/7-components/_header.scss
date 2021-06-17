@@ -1,0 +1,188 @@
+/* ==========================================================================
+   #HEADER
+   ========================================================================== */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 18px;
+  color: #fff;
+  background-color: $brand-blue;
+}
+
+// .header--transparent {
+//   background-color: transparent;
+// }
+
+.header-bar {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq($from: 1600px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__top-group {
+  display: flex;
+
+  > *+* {
+    margin-left: 40px;
+  }
+}
+
+.header__logo {
+
+  .logo__img {
+    width: 128px;
+    height: auto;
+
+    @include mq($from: lg) {
+      width: 180px;
+    }
+
+    @include mq($from: 1800px) {
+      width: 253px;
+    }
+  }
+
+  .logo__img-part {
+    display: none;
+
+    .header--transparent & {
+      display: block;
+    }
+  }
+}
+
+.header__nav {
+  display: none;
+
+  @include mq($from: 1300px) {
+    display: block;
+  }
+}
+
+.header-menu {
+  @include list-unstyled;
+  display: flex;
+
+
+  a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    font-size: 18px;
+    line-height: 1.15;
+    color: inherit;
+    transition:
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
+
+    @include on-event {
+      color: $primary;
+      border-color: currentColor;
+      text-decoration: none;
+    }
+
+    @include mq($from: 1800px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.header-menu--inline {
+
+  a {
+
+    @include mq($until: xl) {
+      font-size: 16px;
+    }
+  }
+
+  > *+* {
+    margin-left: 24px;
+
+    @include mq($from: xl) {
+      margin-left: 30px;
+    }
+
+    @include mq($from: 1920px) {
+      margin-left: 56px;
+    }
+  }
+}
+
+.header__phonelist {
+  flex-wrap: nowrap;
+
+  > *+* {
+
+    @include mq($from: 1920px) {
+      margin-left: 50px;
+    }
+  }
+
+  .phonelist__link {
+    font-size: 18px;
+
+    @include mq($from: xl) {
+      font-size: 20px;
+    }
+
+    @include mq($from: 1920px) {
+      font-size: 25px;
+    }
+  }
+
+  .phonelist__text {
+
+    @include mq($until: xl) {
+      font-size: 14px;
+    }
+  }
+
+  .accent-link {
+    font-size: 16px;
+
+    @include mq($from: 1800px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.header__burger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #fff;
+  background-color: $primary;
+
+  @include mq($from: 1300px) {
+    display: none;
+  }
+
+  .svg-icon {
+    @include center-block;
+  }
+}
+
+.header__footer {
+  display: none;
+
+  @include mq($from: lg) {
+    display: none;
+  }
+}
+

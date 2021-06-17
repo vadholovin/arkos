@@ -10,82 +10,44 @@ mixin icon(name, mods='', self='', ext='')
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + 'icon--' + modsList[i].trim();
+        allMods = allMods + 'svg-icon--' + modsList[i].trim();
       }
     }
-  
-  //- if (self)
-  //-   if (mods)
-  //-     svg(
-  //-       class="icon icon-" + name + ' ' + allMods,
-  //-       aria-hidden="true",
-  //-       focusable="false"
-  //-     )&attributes(attributes)
-  //-       use(xlink:href= imgPath + "#" + name)
-  //-   else
-  //-     svg(
-  //-       class="icon icon-" + name,
-  //-       aria-hidden="true",
-  //-       focusable="false"
-  //-     )&attributes(attributes)
-  //-       use(xlink:href= imgPath + "#" + name)
-  //- else if (ext)
-  //-   if (mods)
-  //-     img(
-  //-       class="icon icon-" + name + ' ' + allMods,
-  //-       aria-hidden="true",
-  //-       focusable="false",
-  //-       src= externalImgPath + name + '.svg'
-  //-     )&attributes(attributes)
-  //-   else
-  //-     img(
-  //-       class="icon icon-" + name,
-  //-       aria-hidden="true",
-  //-       focusable="false",
-  //-       src= externalImgPath + name + '.svg'
-  //-     )&attributes(attributes)
-  //- else if (mods)
-  //-   span(class="icon icon-" + name + ' ' + allMods)&attributes(attributes)
-  //-     svg(aria-hidden="true", focusable="false")
-  //-       use(xlink:href=imgPath + "#" + name)
-  //- else
-  //-   span(class="icon icon-" + name)&attributes(attributes)
-  //-     svg(aria-hidden="true", focusable="false")
-  //-       use(xlink:href=imgPath + "#" + name)
+
   if mods
     if self
       svg(
-        class="icon icon-" + name + ' ' + allMods,
+        class="svg-icon svg-icon-" + name + ' ' + allMods,
         aria-hidden="true",
         focusable="false"
       )&attributes(attributes)
         use(xlink:href= imgPath + "#" + name)
     else if ext
       img(
-        class="icon icon-" + name + ' ' + allMods,
+        class="svg-icon svg-icon-" + name + ' ' + allMods,
         aria-hidden="true",
         focusable="false",
         src= externalImgPath + name + '.svg'
       )&attributes(attributes)
     else
-      span(class="icon icon-" + name + ' ' + allMods)&attributes(attributes)
+      span(class="svg-icon svg-icon-" + name + ' ' + allMods)&attributes(attributes)
         svg(aria-hidden="true", focusable="false")
           use(xlink:href=imgPath + "#" + name)
   else if self
     svg(
-      class="icon icon-" + name,
+      class="svg-icon svg-icon-" + name,
       aria-hidden="true",
       focusable="false"
     )&attributes(attributes)
       use(xlink:href= imgPath + "#" + name)
   else if ext
     img(
-      class="icon icon-" + name,
+      class="svg-icon svg-icon-" + name,
       aria-hidden="true",
       focusable="false",
       src= externalImgPath + name + '.svg'
     )&attributes(attributes)
   else
-    span(class="icon icon-" + name)&attributes(attributes)
+    span(class="svg-icon svg-icon-" + name)&attributes(attributes)
       svg(aria-hidden="true", focusable="false")
         use(xlink:href=imgPath + "#" + name)

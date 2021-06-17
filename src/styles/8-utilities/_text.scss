@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #TEXT UTILITIES
+   ========================================================================== */
+
+.underline {
+  text-decoration: underline;
+}
+
+a.underline {
+
+  @include on-event {
+    text-decoration: none;
+  }
+}

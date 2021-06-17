@@ -2,9 +2,9 @@ include footer.data.pug
 
 footer.footer
   .footer__grid.layout
-    .footer__info
+    .footer__grid-col.footer__aside
       a.logo.footer__logo(href="")
-        img.logo__img(src="assets/img/general/logo.svg", alt="")
+        img.logo__img(src="assets/img/general/logo.svg" width="251" height="80" alt="")
 
       ul.phonelist.footer__phonelist
         li.phonelist__item
@@ -16,14 +16,17 @@ footer.footer
           span.phonelist__text г. Москва
 
       .footer__info
-        p.footer__info-text
+        p.footer__info-text.mb-0
           | Проектирование промышленных зданий и сооружений<br>
           | ООО Фирма “АРКОС”
 
-        a.footer__info-link(href="") www.arkos.proekt.ru
+        .footer__info-link www.arkos.proekt.ru
         a.accent-link(href="") Города проектирования
+        a.underline.footer__policy.footer__policy--aside(href="") Политика конфиденциальности
 
-    .footer__main
+      .footer__copyright.footer__copyright--aside © 2020 arkos.proekt.ru
+
+    .footer__grid-col.footer__main
       .footer__main-col
         h2.footer__main-title О компании
         ul.footer-menu
@@ -46,13 +49,13 @@ footer.footer
 
         ul.social.social--light.footer__social
           li.social__item
-            a.social__item(href="")
+            a.social__link(href="")
               +icon('facebook')
           li.social__item
-            a.social__item(href="")
+            a.social__link(href="")
               +icon('whatsapp')
           li.social__item
-            a.social__item(href="")
+            a.social__link(href="")
               +icon('instagram')
 
       .footer__main-col
@@ -75,7 +78,7 @@ footer.footer
           li
             a(href="") Индустриальные парки
 
-        a.link(href="") Политика конфиденциальности
+        a.underline.footer__policy.footer__policy--main.mt-4(href="") Политика конфиденциальности
 
       .footer__main-col
         h2.footer__main-title Полезное
@@ -86,4 +89,5 @@ footer.footer
             a(href="") Ответы на вопросы
 
         a.accent-link(href="") Наши контакты
-        .footer__map#footer-map
+        .map.footer__map#footer-map
+        .footer__copyright.footer__copyright--main © 2020 arkos.proekt.ru
