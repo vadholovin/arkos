@@ -1,0 +1,63 @@
+/* ==========================================================================
+   #SEO-BOX
+   ========================================================================== */
+
+.seo-box__title {
+  margin-bottom: 15px;
+  font-size: rem(24px);
+
+  @include mq($from: md) {
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-size: rem(40px);
+  }
+}
+
+.seo-box__scroll {
+  overflow-x: hidden;
+
+  .seo-content {
+    padding-right: 16px;
+
+    @include mq($from: md) {
+      padding-right: 30px;
+    }
+  }
+}
+
+.seo-content {
+
+  p {
+    font-size: rem(14px);
+    line-height: 1.6;
+
+    @include mq($from: md) {
+      font-size: rem(18px);
+    }
+  }
+
+  h3 {
+    font-size: rem(20px);
+
+    @include mq($from: md) {
+      font-size: rem(24px);
+    }
+  }
+
+  h4 {
+    font-size: rem(18px);
+
+    @include mq($from: md) {
+      font-size: rem(20px);
+    }
+  }
+
+  h5, h6 {
+    font-size: rem(16px);
+
+    @include mq($from: md) {
+      font-size: rem(18px);
+    }
+  }
+}
+

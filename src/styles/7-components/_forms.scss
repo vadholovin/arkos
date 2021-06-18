@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+.form-control--outline-light {
+  color: #fff;
+  border-color: currentColor;
+  background-color: transparent;
+
+  &:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: rgba(#fff, 0.7);
+  }
+}
+
+.form-control--search {
+  padding-left: 64px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.9315 11.986L16 16M13.9574 7.36364C13.9574 10.8782 11.0568 13.7273 7.47869 13.7273C3.90061 13.7273 1 10.8782 1 7.36364C1 3.8491 3.90061 1 7.47869 1C11.0568 1 13.9574 3.8491 13.9574 7.36364Z' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 30px 50%;
+  background-size: 15px 15px;
+}

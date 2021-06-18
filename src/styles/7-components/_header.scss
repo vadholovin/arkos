@@ -11,11 +11,12 @@
   padding-bottom: 18px;
   color: #fff;
   background-color: $brand-blue;
+  z-index: 10;
 }
 
-// .header--transparent {
-//   background-color: transparent;
-// }
+.header--transparent {
+  background-color: transparent;
+}
 
 .header-bar {
   padding-left: 15px;

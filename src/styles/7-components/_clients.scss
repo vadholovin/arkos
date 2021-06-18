@@ -1,0 +1,103 @@
+/* ==========================================================================
+   #CLIENTS
+   ========================================================================== */
+
+.clients {
+
+}
+
+.clients__grid {
+  display: grid;
+
+
+  @include mq($from: lg) {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.clients__main {
+
+  @include mq($from: lg) {
+    padding-right: 40px;
+
+    @include mq($from: xl) {
+      padding-right: 50px;
+    }
+  }
+}
+
+.clients__header {
+
+  @include mq($from: md) {
+    margin-bottom: 40px;
+  }
+}
+
+.client-slider {
+  padding-bottom: 30px;
+
+  @include mq($from: md) {
+    padding-bottom: 40px;
+  }
+
+  .swiper-wrapper-temp {
+
+    @include mq($from: lg) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      gap: 20px;
+    }
+  }
+}
+
+.client-slide {
+  position: relative;
+  padding-top: percentage(185 / 205);
+  filter: drop-shadow(0px 64px 134px rgba(0, 0, 0, 0.1));
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+    transform: skewX(-15deg);
+    background-color: #fff;
+    z-index: 0;
+  }
+}
+
+.client-slide__img {
+  @include center-block;
+  max-width: 50%;
+  max-height: 50%;
+  z-index: 1;
+
+}
+
+.clients__order {
+  width: 100%;
+
+  @include mq($from: md) {
+    max-width: 270px;
+  }
+}
+
+.clients__aside {
+
+  @include mq($from: lg) {
+    padding: 24px 0 24px 40px;
+    border-left: 1px solid #F0F0F0;
+  }
+}
+
+.clients__seo {
+
+  .seo-box__scroll {
+    max-height: 520px;
+  }
+}
+

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #accent-LINK
+   #ACCENT-LINK
    ========================================================================== */
 
 .accent-link {
@@ -16,5 +16,36 @@
   @include on-event {
     color: $primary;
     text-decoration-color: currentColor;
+  }
+}
+
+.link-with-arrow {
+  display: inline-block;
+  position: relative;
+  padding: 4px 24px 4px 0;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+
+  @include on-event {
+
+    &::after {
+      transform: translate(10px, -50%);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 21 12'%3E%3Cpath fill='%23D29970' d='M20.53 6.53a.75.75 0 000-1.06L15.757.697a.75.75 0 00-1.06 1.06L18.939 6l-4.242 4.243a.75.75 0 001.06 1.06L20.53 6.53zM0 6.75h20v-1.5H0v1.5z'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.3s ease-in-out;
   }
 }

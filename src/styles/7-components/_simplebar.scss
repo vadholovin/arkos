@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #SIMPLEBAR
+   ========================================================================== */
+
+//
+.simplebar-scrollbar::before {
+  background-color: $primary;
+  opacity: 1 !important;
+}
+
+.simplebar-track.simplebar-vertical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px !important;
+  border-radius: 100px;
+  background: rgba($primary, .1);
+  z-index: 0;
+}
+
+.simplebar-content {
+  padding-right: 16px;
+}

@@ -139,11 +139,13 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: -24px;
   z-index: 1;
 
   @include mq($from: md) {
+    flex-direction: row;
     padding-left: 50px;
   }
   @include mq($from: 1400px) {
@@ -226,5 +228,9 @@
   width: 260px;
   height: 260px;
   background-color: #eee;
+
+  @include mq($until: md) {
+    display: none;
+  }
 }
 

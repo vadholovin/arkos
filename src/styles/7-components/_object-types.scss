@@ -1,0 +1,114 @@
+/* ==========================================================================
+   #OBJECT-TYPES
+   ========================================================================== */
+
+.object-types {
+  color: #fff;
+
+  @include mq($from: 1800px) {
+    background-image:
+      url('../img/bg/dots-sm-v.svg'),
+      url('../img/bg/dots-sm-h.svg'),
+      url('../img/bg/dots-lg-v.svg');
+    background-repeat: no-repeat;
+    background-position:
+      left 58px  top 35px,
+      right 90px bottom 130px,
+      left 58px bottom -160px;
+  }
+}
+
+.object-grid {
+  display: grid;
+  grid-gap: 15px;
+  gap: 15px;
+
+  @include mq($from: sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    gap: 20px;
+  }
+  @include mq($from: lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @include mq($from: 1300px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.object-card {
+  border-radius: $border-radius;
+  background-color: #fff;
+  overflow: hidden;
+
+  &:hover {
+
+    .object-card__img img {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}
+
+.object-card__img {
+  display: block;
+  position: relative;
+  padding-top: percentage(285 / 335);
+  overflow: hidden;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 86%,
+    0% 100%
+  );
+
+  img {
+    @include center-block;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+.object-card__body {
+  padding: 12px 25px 25px 25px;
+  color: $body-color;
+
+  @include mq($from: sm) {
+    padding: 15px 30px 25px 30px;
+  }
+}
+
+.object-card__title {
+  margin-bottom: 10px;
+  font-size: rem(17px);
+  color: $body-color;
+  text-transform: uppercase;
+  word-break: break-word;
+
+  @include mq($from: md) {
+    font-size: rem(20px);
+  }
+}
+
+.object-card__link {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+
+  @include mq($until: md) {
+    font-size: rem(14px);
+  }
+}
+
+.object-card__text {
+  max-height: calc(14px * 1.6 * 3);
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow: hidden;
+
+  @include mq($from: md) {
+    max-height: calc(16px * 1.6 * 3);
+    font-size: 16px;
+  }
+}
