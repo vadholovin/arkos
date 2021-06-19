@@ -7,9 +7,9 @@
 
   @include mq($from: 1800px) {
     background-image:
-      url('../img/bg/dots-sm-v.svg'),
-      url('../img/bg/dots-sm-h.svg'),
-      url('../img/bg/dots-lg-v.svg');
+      url('../img/bg/dots-sm-v-white.svg'),
+      url('../img/bg/dots-sm-h-white.svg'),
+      url('../img/bg/dots-lg-v-white.svg');
     background-repeat: no-repeat;
     background-position:
       left 58px  top 35px,

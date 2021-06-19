@@ -4,25 +4,30 @@
 
 .clients {
 
+  .home-page & {
+
+    @include mq($until: md) {
+      order: 12;
+    }
+  }
 }
 
 .clients__grid {
-  display: grid;
-
+  display: flex;
+  flex-direction: column;
 
   @include mq($from: lg) {
-    grid-template-columns: 7fr 5fr;
+    flex-direction: row;
   }
 }
 
 .clients__main {
+  margin-bottom: 30px;
 
   @include mq($from: lg) {
+    width: 60%;
+    margin-bottom: 0;
     padding-right: 40px;
-
-    @include mq($from: xl) {
-      padding-right: 50px;
-    }
   }
 }
 
@@ -33,14 +38,46 @@
   }
 }
 
+.client-slider-wrapper {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff;
+    background-color: $primary;
+    transform: translate(0, calc(-50% - 15px)) skewX(-6deg);
+
+    .svg-icon {
+      transform: skewX(6deg);
+    }
+
+    @include mq($from: lg) {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+}
+
 .client-slider {
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 30px;
 
-  @include mq($from: md) {
+  @include mq($from: lg) {
     padding-bottom: 40px;
   }
 
-  .swiper-wrapper-temp {
+  @include mq($from: lg) {
+    overflow: visible;
+  }
+
+  .swiper-wrapper{
 
     @include mq($from: lg) {
       display: grid;
@@ -53,8 +90,15 @@
 
 .client-slide {
   position: relative;
-  padding-top: percentage(185 / 205);
-  filter: drop-shadow(0px 64px 134px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 45px 95px rgba(0, 0, 0, 0.1));
+
+  @include mq($until: md) {
+    max-height: 180px;
+  }
+
+  @include mq($from: lg) {
+    filter: drop-shadow(0px 64px 134px rgba(0, 0, 0, 0.1));
+  }
 
   &::before {
     content: '';
@@ -64,16 +108,23 @@
     width: 100%;
     height: 100%;
     border-radius: $border-radius;
-    transform: skewX(-15deg);
+    transform: skewX(-6deg);
     background-color: #fff;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    padding-top: 100%;
     z-index: 0;
   }
 }
 
 .client-slide__img {
   @include center-block;
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 56%;
+  max-height: 56%;
   z-index: 1;
 
 }
@@ -89,6 +140,7 @@
 .clients__aside {
 
   @include mq($from: lg) {
+    width: 40%;
     padding: 24px 0 24px 40px;
     border-left: 1px solid #F0F0F0;
   }

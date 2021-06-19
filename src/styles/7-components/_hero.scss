@@ -4,7 +4,7 @@
 
 .hero {
   color: #fff;
-
+  overflow: hidden;
 
   @include mq($from: xl) {
     background-image: url('../img/bg/triangles.svg');

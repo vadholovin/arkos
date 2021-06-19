@@ -18,11 +18,17 @@ section.section.clients
           h2.section__title Наши известные клиенты
           p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 
-        .swiper-container-temp.client-slider.js-client-slider
-          .swiper-wrapper-temp
-            each slide in clients
-              .swiper-slide-temp.client-slide
-                img.client-slide__img(src="assets/img/content/client/" + slide, alt="")
+        .swiper-block.client-slider-wrapper.js-client-slider-wrapper
+          .swiper-container.client-slider.js-client-slider
+            .swiper-wrapper
+              each slide in clients
+                .swiper-slide.client-slide
+                  img.client-slide__img(src="assets/img/content/client/" + slide, alt="")
+
+          .swiper-button-prev
+            +icon('chevron-left')
+          .swiper-button-next
+            +icon('chevron-right')
 
         button.btn.btn-primary.clients__order(type="button") Заказать услугу
 

@@ -1,0 +1,187 @@
+/* ==========================================================================
+   #SERVICES
+   ========================================================================== */
+
+.services {
+
+  @include mq($from: 1800px) {
+    background-image:
+      url('../img/bg/dots-sm-v-blue.svg'),
+      url('../img/bg/dots-sm-h-blue.svg'),
+      url('../img/bg/dots-lg-v-blue.svg');
+    background-repeat: no-repeat;
+    background-position:
+      left 0 bottom 240px,
+      right 27px top 300px,
+      left 85px bottom 945px;
+  }
+
+  .home-page & {
+
+    @include mq($until: md) {
+      order: 12;
+    }
+  }
+}
+
+.service-grid {
+  display: grid;
+  grid-gap: 15px;
+  gap: 15px;
+
+  @include mq($from: md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 25px;
+    gap: 25px;
+  }
+  @include mq($from: lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius;
+  background-color: #fff;
+  overflow: hidden;
+
+  &:hover {
+
+    .service-card__img img {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}
+
+.service-card__img {
+  display: none;
+  position: relative;
+  margin-bottom: 10px;
+  padding-top: percentage(301 / 450);
+  overflow: hidden;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 86%,
+    0% 100%
+  );
+
+  @include mq($from: md) {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  img {
+    @include center-block;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+.service-card__content {
+
+  @include mq($from: md) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.service-card__header {
+  position: relative;
+}
+
+.service-card__price {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 40px;
+  padding: 8px 16px;
+  border-radius: $border-radius;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #ffffff;
+  background: $primary;
+}
+
+.service-card__title {
+  position: relative;
+  width: 100%;
+  padding: 15px 35px 15px 15px;
+  border: 0;
+  font-weight: 600;
+  font-size: rem(14px);
+  line-height: 1.15;
+  text-align: left;
+  text-transform: uppercase;
+  background: transparent;
+  box-shadow: none;
+
+  @include mq($from: sm) {
+    font-size: rem(16px);
+  }
+
+  @include mq($from: md) {
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: text !important;
+  }
+
+  @include mq($from: 1300px) {
+    font-size: rem(20px);
+  }
+
+  &::after {
+
+    @include mq($until: md) {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 11px;
+      height: 11px;
+      background-image: url("data:image/svg+xml,%3Csvg fill='none' viewBox='0 0 11 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23d29970' d='m1.375 0-1.375 1.4004 4.125 4.1992 1.375 1.4004 1.375-1.4004 4.125-4.1992-1.375-1.4004-4.125 4.1992-4.125-4.1992z'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &:not(.collapsed) {
+
+    &::after {
+      transform: rotate(0.5turn);
+    }
+  }
+}
+
+.service-card__body {
+  padding: 0 15px 15px 15px;
+
+  @include mq($from: md) {
+    margin-top: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+
+}
+
+.service-card__text {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include mq($from: sm) {
+    font-size: 16px;
+  }
+
+  @include mq($from: md) {
+    max-height: calc(16px * 1.5 * 4);
+    overflow: hidden;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

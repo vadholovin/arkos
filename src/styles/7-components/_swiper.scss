@@ -1,0 +1,119 @@
+/* ==========================================================================
+   #SWIPER
+   ========================================================================== */
+
+.swiper-block {
+  position: relative;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  opacity: 1;
+  transform: translate(0, -50%);
+  border-radius: $border-radius;
+  font-size: 10px;
+  color: $primary;
+  background-color: #fff;
+
+  @include mq($from: lg) {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  &:not(.swiper-button-disabled):hover,
+  &:not(.swiper-button-disabled):focus {
+    outline-width: 0;
+    color: #fff;
+    background-color: $primary;
+  }
+
+  @include basic-transition((background-color, color, opacity));
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none;
+}
+
+.swiper-button-disabled {
+  opacity: unset;
+  color: #808080;
+  background-color: #f0f0f0;
+}
+
+.swiper-button-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+// .swiper-pagination {
+
+//   > *+* {
+//     margin-left: 20px;
+//   }
+// }
+
+// .swiper-pagination-bullet {
+//   width: 5px;
+//   height: 5px;
+//   background: #a2a2a2;
+//   opacity: 1;
+
+//   .swiper-pagination--timer & {
+//     position: relative;
+//     display: inline-block;
+//     width: 20px;
+//     height: 20px;
+//     background: transparent !important;
+
+//     &::after {
+//       content: '';
+//       @include center-block;
+//       width: 5px;
+//       height: 5px;
+//       border-radius: 50%;
+//       background: #a2a2a2;
+//     }
+//   }
+// }
+
+// .swiper-pagination-bullet-active {
+//   background: $gray-900;
+
+//   .swiper-pagination--timer & {
+
+//     &::after {
+//       background: $gray-900;
+//     }
+//   }
+// }
+
+.swiper-buttons {
+  display: flex;
+  align-items: center;
+
+  > * {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    transform: none;
+    flex-shrink: 0;
+  }
+
+  > * + * {
+    margin-left: 30px;
+  }
+}

@@ -1,32 +1,34 @@
 include services.data.pug
 
-section.section.bg-secondary.services
+section.section.bg-light.services
   .layout
     header.section__header.services__header
       h2.section__title Услуги компании
       p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 
-    .service-grid.js-service-grid#service-grid
+    .service-grid#service-accordion
       each card, index in services
         - var num = index + 1
         - var headingID = "service-heading-" + num
         - var bodyID = "service-body-" + num
 
-        .service-card
+        .service-card.js-service-card
           a.service-card__img(href="")
-            img(src="assets/img/content/services/" + card.img, alt="")
+            img(src="assets/img/content/service/" + card.img, alt="")
           .service-card__header(id=headingID)
             span.service-card__price от 15 000 000 руб.
             h5.mb-0
-              button.service-card__btn(
+              button.service-card__title.js-service-toggler(
                 type='button'
                 data-target='#' + bodyID
+                data-toggle="collapse"
+                aria-expanded="true"
                 aria-controls=bodyID
               )!= card.title
-          .service-card__body(
+          .service-card__body.collapse.show.js-service-collapse(
             id=bodyID
             aria-labelledby=headingID
-            data-parent='#service-grid'
+            data-parent='#service-accordion'
           )
             .service-card__text= card.text
-            a.service-card__link.link.link--with-arrow(href="") Подробнее об услуге
+            a.service-card__link.link-with-arrow(href="") Подробнее об услуге
