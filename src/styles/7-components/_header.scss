@@ -12,6 +12,10 @@
   color: #fff;
   background-color: $brand-blue;
   z-index: 10;
+
+  @include mq($until: sm) {
+    display: none;
+  }
 }
 
 .header--transparent {

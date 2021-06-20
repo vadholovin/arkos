@@ -1,0 +1,43 @@
+section.section.top-block.top-block--about.bg-light.about.pt-0
+  include ../breadcrumb/breadcrumb
+
+  .layout
+    .top-block__inner
+      .top-block__main
+        h1.top-block__title О компании
+        .top-block__excerpt
+          p Workki - сеть коворкингов бизнес-класса для работы, деловых встреч и мероприятий. Workki - это более 20 000 квадратных метров площади, 2 500 рабочих мест и более 6 000 довольных резидентов.
+
+        .top-block__desc
+          p Workki - сеть коворкингов бизнес-класса для работы, деловых встреч и мероприятий. Workki - это более 20 000 квадратных метров площади, 2 500 рабочих мест и более 6 000 довольных резидентов.
+          p Первая локация нашей сети была открыта в апреле 2017 года. С тех пор мы постоянно улучшаем сервис и предоставляем все больше новых возможностей для развития бизнеса резидентам. Workki - сеть коворкингов бизнес-класса для работы, деловых встреч и мероприятий. Workki - это более 20 000 квадратных метров площади, 2 500 рабочих мест и более 6 000 довольных резидентов.
+          p Первая локация нашей сети была открыта в апреле 2017 года. С тех пор мы постоянно улучшаем сервис и предоставляем все больше новых возможностей для развития бизнеса резидентам.
+
+        ul.about-stat__list
+          li.about-stat__item
+            span.about-stat__item-value 28
+            span.about-stat__item-caption Лет на рынке
+          li.about-stat__item
+            span.about-stat__item-value 140
+            span.about-stat__item-caption Успешных проектов
+          li.about-stat__item
+            span.about-stat__item-value 250
+            span.about-stat__item-caption Пройденных экспертиз
+
+      .top-block__aside
+        .swiper-block.about-slider-wrapper.js-about-slider-wrapper
+          .swiper-container.about-slider.js-about-slider
+            .swiper-wrapper
+              each item in [1,2,3]
+                .swiper-slide.about-slide
+                  .about-slide__img
+                    img(src="assets/img/content/about/slide-1.jpg", alt="")
+                  .about-slide__body
+                    .about-slide__title Завод МЕРСЕДЕС по производству авто (г. Королев)
+                    a.about-slide__link.underline(href="") Подробнее про объект
+
+          .swiper-buttons.swiper-buttons--bottom.about-slider-buttons
+            .swiper-button-prev
+              +icon('chevron-left')
+            .swiper-button-next
+              +icon('chevron-right')

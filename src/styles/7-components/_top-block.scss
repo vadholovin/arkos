@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #TOP-BLOCK
+   ========================================================================== */
+
+.top-block {
+
+  @include mq($from: xl) {
+    background-image: url('../img/bg/triangles.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+}
+
+.top-block__inner {
+  display: flex;
+  flex-direction: column;
+
+  @include mq($from: lg) {
+    flex-direction: row;
+  }
+}
+
+.top-block__main {
+  width: 100%;
+
+  @include mq($from: lg) {
+    width: 58%;
+  }
+}
+
+.top-block__title {
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: rem(24px);
+  text-transform: uppercase;
+
+  @include mq($from: sm) {
+    font-size: rem(32px);
+  }
+  @include mq($from: md) {
+    font-size: rem(40px);
+  }
+  @include mq($from: lg) {
+    font-size: rem(50px);
+  }
+}
+
+.top-block__excerpt {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: rem(12px);
+
+  @include mq($from: sm) {
+    font-size: 1rem;
+  }
+
+  @include mq($from: lg) {
+    display: none;
+  }
+}
+
+.top-block__desc {
+  display: none;
+
+
+  @include mq($from: lg) {
+    display: block;
+    margin-bottom: 40px;
+    font-size: rem(20px);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.top-block__aside {
+  width: 100%;
+
+  @include mq($until: lg) {
+    order: -1;
+    margin-bottom: 15px;
+  }
+
+  @include mq($from: lg) {
+    width: 420px;
+    margin-left: 64px;
+  }
+}
+

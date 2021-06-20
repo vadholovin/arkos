@@ -14,6 +14,11 @@
 .content-wrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 130px;
+
+  .home-page & {
+    padding-top: 0;
+  }
 }
 
 .layout {

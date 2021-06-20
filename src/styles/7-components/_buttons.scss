@@ -5,3 +5,34 @@
 .btn-primary {
   color: #fff;
 }
+
+.play-btn {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+
+  @include on-event {
+    animation-name: beat;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  svg {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+}
+
+@keyframes beat {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

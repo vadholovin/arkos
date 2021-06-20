@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #IMAGE-CUTTED
+   ========================================================================== */
+
+.image-cutted {
+  display: block;
+  position: relative;
+  padding-top: percentage(1 / 1);
+  overflow: hidden;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 86%,
+    0% 100%
+  );
+
+  img {
+    @include center-block;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}

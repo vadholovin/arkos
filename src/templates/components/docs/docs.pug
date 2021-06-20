@@ -1,0 +1,31 @@
+section.section.bg-light.docs
+  .layout
+    header.section__header.section__header--center.docs__header
+      h2.section__title Наши сертификаты
+      p.section__subtitle Соответствие требованиям ISO 9001 свидетельствует об уровне надежности поставщика и добротности его компании.
+
+    .docs-sliders
+      each slider, index in ['left', 'right']
+        .docs-sliders__col(class="docs-sliders__col--" + slider)
+          .swiper-block.docs-slider-wrapper.js-docs-slider-wrapper(id="docs-slider-wrapper-" + (index + 1))
+            .swiper-container.docs-slider.js-docs-slider
+              .swiper-wrapper
+                each item in [1,2,3]
+                  .swiper-slide.docs-slide
+                    .docs-card
+                      a.docs-card__img(href="")
+                        img(src="assets/img/content/docs/docs-1.png", alt="")
+                      .docs-card__body
+                        h5.docs-card__title
+                          if slider == 'left'
+                            | CPO сертификат
+                          else
+                            | Лицензия или сертификат
+                        .docs-card__text
+                          | Соответствие требованиям ISO 9001 свидетельствует об уровне надежности поставщика и добротности его компании.
+
+            .swiper-buttons.swiper-buttons--bottom.docs-slider-buttons
+              .swiper-button-prev
+                +icon('chevron-left')
+              .swiper-button-next
+                +icon('chevron-right')

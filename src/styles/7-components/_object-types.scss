@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #OBJECT-TYPES
+   #OBJECT
    ========================================================================== */
 
 .object-types {
@@ -50,22 +50,9 @@
 }
 
 .object-card__img {
-  display: block;
-  position: relative;
   padding-top: percentage(285 / 335);
-  overflow: hidden;
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 86%,
-    0% 100%
-  );
 
   img {
-    @include center-block;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
     transition: transform 0.4s ease-in-out;
   }
 }
@@ -110,5 +97,65 @@
   @include mq($from: md) {
     max-height: calc(16px * 1.6 * 3);
     font-size: 16px;
+  }
+}
+
+.object-slider-wrapper {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+
+    @include mq($until: lg) {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -35px;
+
+    @include mq($from: 1600px) {
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  .swiper-button-next {
+    right: -35px;
+
+    @include mq($from: 1600px) {
+      transform: translate(100%, -50%);
+    }
+  }
+}
+
+.object-slider {
+
+  .swiper-wrapper {
+
+    @include mq($until: lg) {
+      display: grid;
+      grid-gap: 20px;
+      gap: 20px;
+    }
+
+    @include mq($until: sm) {
+      grid-gap: 15px;
+      gap: 15px;
+    }
+  }
+}
+
+.object-slide {
+  display: grid;
+  grid-gap: 15px;
+  gap: 15px;
+
+  @include mq($from: sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    gap: 20px;
+  }
+
+  @include mq($from: lg) {
+    grid-template-columns: 1fr;
   }
 }

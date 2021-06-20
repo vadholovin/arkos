@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'О компании'
+  - var bodyClass = 'about-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/top-block/about
+    include ../components/objects/objects
+    include ../components/team/team
+    include ../components/docs/docs
+    include ../components/clients/clients
+    //- include ../components/forms/object-form
+  include ../components/footer/footer

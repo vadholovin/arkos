@@ -1060,18 +1060,18 @@ $figure-caption-color:              $gray-600 !default;
 
 $breadcrumb-font-size:              null !default;
 
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y:              20px !default;
+$breadcrumb-padding-x:              0 !default;
 $breadcrumb-item-padding:           .5rem !default;
 
-$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          0.5rem !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-600 !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider-color:          $primary !default;
+$breadcrumb-active-color:           $gray-900 !default;
+$breadcrumb-divider:                url('../img/content/chevron-right-brown.svg') !default;
 
-$breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-border-radius:          0 !default;
 
 
 // Carousel

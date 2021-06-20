@@ -21,6 +21,11 @@
     margin-bottom: 70px;
   }
 
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+
   > *+* {
     margin-top: 15px;
   }

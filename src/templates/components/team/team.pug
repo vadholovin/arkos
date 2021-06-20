@@ -1,0 +1,39 @@
+section.section.team
+  .layout
+    header.section__header.team__header
+      h2.section__title Топ менеджмент
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+    .swiper-block.team-slider-wrapper.js-team-slider-wrapper
+      .swiper-container.team-slider.js-team-slider
+        .swiper-wrapper
+          each item in [1,2,3,4, 1,2,3,4]
+            .swiper-slide.team-slide
+              .team-card
+                .team-card__img
+                  img(src=`assets/img/content/team/team-${item}.jpg`, alt="")
+                  button.play-btn(type="button")
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#D29970"/><path d="M27.124 19.9999L16.273 26.2648L16.273 13.735L27.124 19.9999Z" fill="white"/></svg>
+                .team-card__body
+                  h5.team-card__title Иванов Иван
+                  .team-card__text “Эмоциональная вовлеченность на занятия это залог нашего успеха”
+
+                  ul.team-card__info
+                    li.team-card__info-item
+                      .team-card__info-label Образование:
+                      .team-card__info-text РУДН
+
+                    li.team-card__info-item
+                      .team-card__info-label Должность:
+                      .team-card__info-text Топ менеджер
+
+                    li.team-card__info-item
+                      .team-card__info-label Работа в компании:
+                      .team-card__info-text 28 лет
+
+
+      .swiper-button-prev
+        +icon('chevron-left')
+      .swiper-button-next
+        +icon('chevron-right')
+

@@ -1,18 +1,31 @@
-include objects.data.pug
-
 section.section.bg-secondary.object-types
   .layout
     header.section__header.object-types__header
-      h2.section__title Типы объектов
+      h2.section__title Наши объекты
       p.section__subtitle Проектируем, готовим проектную документацию, проходим экспертизу и разрешение на строительство
 
-    .object-grid
-      each card, index in objects
-        .object-card
-          a.object-card__img(href="")
-            img(src="assets/img/content/type/" + card.img, alt="")
-          .object-card__body
-            a(href="")
-              h5.object-card__title!= card.title
-            a.object-card__link.link-with-arrow(href="") Подробнее про объект
-            p.object-card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis
+    .swiper-block.object-slider-wrapper.js-object-slider-wrapper
+      .swiper-container.object-slider.js-object-slider
+        .swiper-wrapper
+          each item in [1,2,3,4,5]
+            .swiper-slide.object-slide
+              .object-card
+                a.object-card__img.image-cutted(href="")
+                  img(src=`assets/img/content/object/object-${item}.jpg`, alt="")
+                .object-card__body
+                  a(href="")
+                    h5.object-card__title
+                      | Завод МЕРСЕДЕС по производству авто
+
+              .object-card
+                a.object-card__img.image-cutted(href="")
+                  img(src=`assets/img/content/object/object-${item + 1}.jpg`, alt="")
+                .object-card__body
+                  a(href="")
+                    h5.object-card__title
+                      | Завод МЕРСЕДЕС по производству авто
+
+      .swiper-button-prev
+        +icon('chevron-left')
+      .swiper-button-next
+        +icon('chevron-right')

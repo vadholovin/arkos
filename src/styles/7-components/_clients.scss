@@ -65,16 +65,14 @@
 }
 
 .client-slider {
+  margin-bottom: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 30px;
+  filter: drop-shadow(0px 45px 95px rgba(0, 0, 0, 0.1));
 
   @include mq($from: lg) {
-    padding-bottom: 40px;
-  }
-
-  @include mq($from: lg) {
-    overflow: visible;
+    margin-bottom: 40px;
+    filter: drop-shadow(0px 64px 134px rgba(0, 0, 0, 0.1));
   }
 
   .swiper-wrapper{
@@ -90,14 +88,10 @@
 
 .client-slide {
   position: relative;
-  filter: drop-shadow(0px 45px 95px rgba(0, 0, 0, 0.1));
+
 
   @include mq($until: md) {
     max-height: 180px;
-  }
-
-  @include mq($from: lg) {
-    filter: drop-shadow(0px 64px 134px rgba(0, 0, 0, 0.1));
   }
 
   &::before {

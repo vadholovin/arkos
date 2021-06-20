@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #BREADCRUMB
+   ========================================================================== */
+
+.breadcrumb-item {
+
+  a {
+    color: $body-color;
+    text-decoration: underline;
+    text-decoration-color: rgba($body-color, 0.1);
+    text-underline-offset: 3px;
+
+    @include on-event {
+      text-decoration: none;
+    }
+  }
+}
