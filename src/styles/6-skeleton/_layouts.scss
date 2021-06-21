@@ -17,15 +17,18 @@
   padding-top: 190px;
 
   @include mq($from: md) {
-    padding-top: 145px;
+    padding-top: 140px;
   }
 
   @include mq($from: lg) {
-    padding-top: 108px;
+    padding-top: 85px;
+  }
+  @include mq($from: 1300px) {
+    padding-top: 100px;
   }
 
   @include mq($from: 1800px) {
-    padding-top: 130px;
+    padding-top: 120px;
   }
 
   .home-page & {

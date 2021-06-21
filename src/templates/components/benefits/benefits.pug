@@ -1,0 +1,26 @@
+-
+  var benefits = [
+    {
+      text: "28 летний опыт<br>работы",
+      img: "cup.svg"
+    },
+    {
+      text: "Проектирование зданий<br>любого масштаба и назначения",
+      img: "buildings.svg"
+    },
+    {
+      text: "Работа под ключ",
+      img: "key.svg"
+    },
+  ]
+
+section.section.bg-light.benefits
+  .layout
+    header.section__header.section__header--center.benefits__header
+      h2.section__title Наши преимущества
+
+    ul.benefits-list
+      each item in benefits
+        li.benefits-item
+          img.benefits-item__img(src="assets/img/content/" + item.img width="160" height="160" alt="")
+          span.benefits-item__text!= item.text

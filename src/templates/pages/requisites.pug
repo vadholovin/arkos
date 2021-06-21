@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Реквизиты'
+  - var bodyClass = 'requisites-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/requisites/requisites
+    include ../components/seo/seo-requisites
+  include ../components/footer/footer

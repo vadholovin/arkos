@@ -1,0 +1,179 @@
+/* ==========================================================================
+   #REQUISITES
+   ========================================================================== */
+
+.requisites {
+
+}
+
+.requisites-box {
+  padding: 30px 20px;
+  border-radius: $border-radius;
+  background-color: #fff;
+
+  @include mq($from: md) {
+    padding: 60px;
+  }
+
+  @include mq($from: lg) {
+    padding: 80px;
+  }
+}
+
+.requisites-box__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+
+  @include mq($from: lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+  }
+
+  > *+* {
+
+    @include mq($until: lg) {
+      margin-top: 1remf;
+    }
+  }
+}
+
+.requisites-box__title {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: rem(26px);
+
+  @include mq($from: sm) {
+    font-size: rem(32px);
+  }
+
+  @include mq($from: md) {
+    font-size: rem(40px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(60px);
+  }
+}
+
+.requisites-box__header-info {
+  line-height: 1.6;
+
+  @include mq($from: lg) {
+    text-align: right;
+  }
+}
+
+.requisites-box__header-name {
+  font-weight: 600;
+  font-size: rem(18px);
+  color: $secondary;
+
+  @include mq($from: lg) {
+    font-size: rem(26px);
+  }
+}
+
+.requisites-box__header-note {
+
+  @include mq($until: sm) {
+    font-size: rem(10px);
+  }
+}
+
+.requisites-box__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: start;
+  grid-gap: 20px;
+  gap: 20px;
+
+  @include mq($from: md) {
+    grid-gap: 40px;
+    gap: 40px;
+  }
+}
+
+
+.requisites-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  gap: 15px;
+  grid-template-areas:
+    "requisites-item-1 requisites-item-2 requisites-item-3"
+    "requisites-item-4 requisites-item-4 requisites-item-4"
+    "requisites-item-5 requisites-item-5 requisites-item-5"
+    "requisites-item-6 requisites-item-6 requisites-item-7";
+  margin-bottom: 0;
+  @include list-unstyled;
+
+  @include mq($from: lg) {
+    grid-gap: 15px;
+    gap: 15px;
+  }
+}
+
+.requisites-item {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+
+  &:nth-child(1) {
+    grid-area: requisites-item-1;
+  }
+  &:nth-child(2) {
+    grid-area: requisites-item-2;
+  }
+  &:nth-child(3) {
+    grid-area: requisites-item-3;
+  }
+  &:nth-child(4) {
+    grid-area: requisites-item-4;
+  }
+  &:nth-child(5) {
+    grid-area: requisites-item-5;
+  }
+  &:nth-child(6) {
+    grid-area: requisites-item-6;
+  }
+  &:nth-child(7) {
+    grid-area: requisites-item-7;
+  }
+}
+
+.requisites-item__label {
+  line-height: 1.6;
+  color: $gray-600;
+
+  @include mq($until: sm) {
+    font-size:  rem(10px);
+  }
+}
+
+.requisites-item__text {
+  font-size: rem(12px);
+  line-height: 1.6;
+
+  @include mq($from: sm) {
+    font-size: 1rem;
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(20px);
+  }
+}
+
+.requisites-card {
+  background: $gray-100;
+}
+
+.requisites-card__img {
+
+}
+

@@ -3,11 +3,18 @@
    ========================================================================== */
 
 .top-block {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position:
+    left 0 top 0,
+    right 0 top 0;
+  background-size: 0;
 
-  @include mq($from: xl) {
-    background-image: url('../img/bg/triangles.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
+  @include mq($from: lg) {
+    background-size: 0, auto 100%;
+  }
+
+  @include mq($from: 1800px) {
     background-size: auto 100%;
   }
 }
@@ -63,10 +70,12 @@
 .top-block__desc {
   display: none;
 
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
 
   @include mq($from: lg) {
     display: block;
-    margin-bottom: 40px;
     font-size: rem(20px);
   }
 
@@ -76,16 +85,42 @@
 }
 
 .top-block__aside {
-  width: 100%;
+
 
   @include mq($until: lg) {
+    width: 100%;
     order: -1;
     margin-bottom: 15px;
   }
 
-  @include mq($from: lg) {
-    width: 420px;
-    margin-left: 64px;
+  .top-block--about & {
+
+    @include mq($from: lg) {
+      width: 420px;
+      margin-left: 64px;
+    }
+  }
+}
+
+.top-block__img {
+  position: relative;
+  max-height: 350px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: percentage(180 /290);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
   }
 }
 

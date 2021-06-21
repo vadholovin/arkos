@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Услуги'
+  - var bodyClass = 'services-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/top-block/services
+    include ../components/services/services-services
+    include ../components/forms/object-form-services
+    include ../components/objects/objects-services
+    include ../components/benefits/benefits
+    include ../components/docs/docs
+    include ../components/seo/seo-services
+  include ../components/footer/footer

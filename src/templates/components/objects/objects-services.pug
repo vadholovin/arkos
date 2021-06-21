@@ -8,18 +8,10 @@ section.section.bg-secondary.object-types
       .swiper-container.object-slider.js-object-slider
         .swiper-wrapper
           each item in [1,2,3,4,5]
-            .swiper-slide.object-slide.object-slide--grid
+            .swiper-slide.object-slide
               .object-card
                 a.object-card__img.image-cutted(href="")
                   img(src=`assets/img/content/object/object-${item}.jpg`, alt="")
-                .object-card__body
-                  a(href="")
-                    h5.object-card__title
-                      | Завод МЕРСЕДЕС по производству авто
-
-              .object-card
-                a.object-card__img.image-cutted(href="")
-                  img(src=`assets/img/content/object/object-${item + 1}.jpg`, alt="")
                 .object-card__body
                   a(href="")
                     h5.object-card__title
