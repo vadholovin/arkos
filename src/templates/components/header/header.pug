@@ -3,7 +3,7 @@ include header.data.pug
 
 header.header(class=(bodyClass == 'home-page') ? "header--transparent" : "")
   .header-bar.header__top
-    .header__top-group
+    .header__top-group.header__top-group--first
       a.header__logo.logo(href="")
         <svg class="logo__img" width="253" height="81" viewBox="0 0 253 81" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M13.4016 76.1568H10.3125V68.6482H6.65766V76.1568H3.5686V65.9568H13.4016V76.1568Z" fill="white"/>
@@ -41,7 +41,7 @@ header.header(class=(bodyClass == 'home-page') ? "header--transparent" : "")
           li
             a(href="")= item
 
-    .header__top-group
+    .header__contacts.header__top-group
       ul.phonelist.phonelist--inline.phonelist--no-icons.header__phonelist
         li.phonelist__item
           a.phonelist__link(href="") +7 (495) 123-45-67
@@ -50,11 +50,30 @@ header.header(class=(bodyClass == 'home-page') ? "header--transparent" : "")
           a.phonelist__link(href="") 8 (800) 123-45-67
           a.accent-link(href="") Перезвоните мне
 
-      button.btn.btn-icon.header__burger.js-toggle-menu(aria-expanded="false" aria-label="Меню")
-        +icon('bars')
+    button.btn.btn-icon.header__burger.js-toggle-menu(aria-expanded="false" aria-label="Меню" aria-controls="mobile-nav")
+      +icon('bars')
 
   .header-bar.header__footer
     a.header__contact(href="") 8 (800) 123-45-67
-    form.form.search-form
-      .form-group
-        input.form-control.form-control--outline-light(type='text' placeholder='Поиск полезной информации')
+    form.form.search-form.header__search
+      input.form-control.form-control--search.form-control--outline-light(type='text' placeholder='Поиск полезной информации')
+
+  .header__mobile.mobile-nav.js-mobile-nav#mobile-nav
+    .mobile-nav__inner
+      button.close.mobile-nav__close.js-toggle-menu(type="button" aria-label="Закрыть меню")
+        +icon('close')
+      .mobile-nav__box
+        h5.mobile-nav__title Меню
+        ul.header-menu.header-menu--mobile
+          each item in menu
+            li
+              a(href="")= item
+
+      .mobile-nav__box
+        ul.phonelist.phonelist--inline.phonelist--no-icons.mobile__phonelist
+          li.phonelist__item
+            a.phonelist__link(href="") +7 (495) 123-45-67
+            span.phonelist__text Пн-Пт с 10:00 до 18:00
+          li.phonelist__item
+            a.phonelist__link(href="") 8 (800) 123-45-67
+            a.accent-link(href="") Перезвоните мне

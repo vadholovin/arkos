@@ -14,7 +14,19 @@
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: 130px;
+  padding-top: 190px;
+
+  @include mq($from: md) {
+    padding-top: 145px;
+  }
+
+  @include mq($from: lg) {
+    padding-top: 108px;
+  }
+
+  @include mq($from: 1800px) {
+    padding-top: 130px;
+  }
 
   .home-page & {
     padding-top: 0;

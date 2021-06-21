@@ -8,6 +8,27 @@ jQuery(function ($) {
 
 
 /**
+ * Menu
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  const toggler = document.querySelectorAll('.js-toggle-menu');
+  const menu = document.querySelector('.js-mobile-nav');
+
+  toggler.forEach(el => {
+    el.addEventListener('click', toggleMenu);
+  });
+
+  function toggleMenu(event) {
+    const btn = event.target;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+    btn.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('mobile-nav--open');
+  }
+});
+
+
+/**
  * Simplebar
  */
 document.addEventListener('DOMContentLoaded', function () {

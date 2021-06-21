@@ -1,44 +1,77 @@
+include form.data.pug
+
+
 section.section.bg-light.form-banner
   .layout
     .form-banner__inner
       .form-banner__content
-        h2.form-banner__title Выберите тип объекта
-        .form-banner__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        header.form-banner__header
+          h2.form-banner__title Выберите тип объекта
+          p.form-banner__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 
-      .form-box
-        .form-box__title Оставьте свои контакты для связи
-        .form-box__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        .form-banner__controls
+          .form-banner-checkboxes
+            input#object-area-outer(type="hidden")
 
-        form.form
-          input#object-type(type="hidden", name="object-type")
-          input#object-area(type="hidden", name="object-area")
+            each item in checkboxes
+              button.form-banner-checkbox(
+                type="button"
+                role="checkbox"
+                aria-checked="false"
+                data-value=""
+              )
+                .form-banner-checkbox__inner
+                  .form-banner-checkbox__icon!= item.img
+                  .form-banner-checkbox__title!= item.title
 
-          .form-group
-            select.form-control#object-type-select
-              option Индустриальные предприятия
-              option Химические заводы
-              option Сельскохозяйственные предприятия
-              option Бизнес-центры и торговые центры
-              option Логистические комплексы
-              option Пищевые предприятия
-              option Административные здания
-              option Промышленные объекты
-              option Спортивные сооружения
 
           .form-group
-            select.form-control#object-area-select
+            select.form-control#object-area-select-outer
+              option ВЫБЕРИТЕ ПЛОЩАДЬ ОБЪЕКТА
               option 100 м2
               option 500 м2
               option 1000 м2
               option 5000 м2
               option 10000 м2
 
-          .form-group
-            input.form-control(type='text' placeholder='Ваше имя')
-          .form-group
-            input.form-control(type='email' placeholder='Ваш e-mail')
-          .form-group
-            input.form-control(type='tel' placeholder='Ваш номер телефона')
+      .form-banner__aside
+        .form-box
+          header.form-box__header
+            h5.form-box__title Оставьте свои контакты для связи
+            p.form-box__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 
-          button.btn.btn-primary.wpcf7-submit(type="submit") Отправить
+          form.form.form-box__form
+            input#object-type(type="hidden", name="object-type")
+            input#object-area(type="hidden", name="object-area")
+
+            .form-group.d-lg-none
+              select.form-control#object-type-select
+                option ВЫБЕРИТЕ ТИП ОБЪЕКТА
+                option Индустриальные предприятия
+                option Химические заводы
+                option Сельскохозяйственные предприятия
+                option Бизнес-центры и торговые центры
+                option Логистические комплексы
+                option Пищевые предприятия
+                option Административные здания
+                option Промышленные объекты
+                option Спортивные сооружения
+
+            .form-group.d-lg-none
+              select.form-control#object-area-select
+                option ВЫБЕРИТЕ ПЛОЩАДЬ ОБЪЕКТА
+                option 100 м2
+                option 500 м2
+                option 1000 м2
+                option 5000 м2
+                option 10000 м2
+
+            .form-group
+              input.form-control(type='text' placeholder='Ваше имя')
+            .form-group
+              input.form-control(type='email' placeholder='Ваш e-mail')
+            .form-group
+              input.form-control(type='tel' placeholder='Ваш номер телефона')
+
+            button.btn.btn-primary.btn-block.wpcf7-submit(type="submit") Отправить
 
