@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #BACKGROUNDS
+   ========================================================================== */
+
+.bg-img-triangles {
+
+  @include mq($from: lg) {
+    background-image: url('../img/bg/triangles.png');
+    background-repeat: no-repeat;
+    background-position: left 0 top 0;
+  }
+}

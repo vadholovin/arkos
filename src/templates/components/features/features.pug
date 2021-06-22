@@ -1,0 +1,61 @@
+-
+  var features = [
+    {
+      img: 'design.svg',
+      text: 'Дизайн проект бесплатно.<br>Допуск СРО',
+    },
+    {
+      img: 'estimate.svg',
+      text: 'Честные адекватные цены.<br>Смета окончательна',
+    },
+    {
+      img: 'catalog.svg',
+      text: 'Проекты, согласование,<br>комплектация - всё в одном месте.',
+    },
+    {
+      img: 'truck.svg',
+      text: 'Выезд менеджеров и<br>дизайнеров к клиентам',
+    },
+    {
+      img: 'eye-with-pencils.svg',
+      text: 'Демонстрация объектов<br>на разных этапах',
+    },
+    {
+      img: 'team.svg',
+      text: 'Стабильный<br>профессиональный коллектив',
+    },
+    {
+      img: 'cubes.svg',
+      text: 'Современные технологии<br>и материалы',
+    },
+    {
+      img: 'handshake.svg',
+      text: 'Наши клиенты всегда<br>рекомендуют нас друзьям',
+    },
+  ]
+
+section.section.bg-light.features
+  .layout
+    .features__grid
+      .features__cell
+        header.section__header.features__header
+          h2.section__title Почему стоит заказать проект у нас?
+          p.section__subtitle Проект здания - это материализация бизнес-идеи заказчика с целью расчета функциональности, технических характеристик, эксплуатационных возможностей объекта, а также создание эстетики здания.
+
+        ul.stat-list.features__stat-list
+          li.stat-item
+            span.stat-item__value 28
+            span.stat-item__caption Лет на рынке
+          li.stat-item
+            span.stat-item__value 140
+            span.stat-item__caption Успешных проектов
+          li.stat-item
+            span.stat-item__value 250
+            span.stat-item__caption Пройденных экспертиз
+
+      .features__cell
+        ul.features-list
+          each item in features
+            li.features-item
+              img.features-item__icon(src="assets/img/content/features/" + item.img, alt="")
+              span.features-item__text!= item.text

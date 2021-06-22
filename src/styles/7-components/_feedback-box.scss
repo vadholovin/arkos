@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #FEEDBACK-BOX
+   ========================================================================== */
+
+.feedback-box {
+  padding: 20px;
+  background: #f2f2f2;
+
+  @include mq($from: md) {
+    padding: 40px;
+  }
+
+  @include mq($from: lg) {
+    padding: 60px;
+  }
+}
+
+.feedback-box__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  @include mq($from: sm) {
+    margin-bottom: 32px;
+  }
+  @include mq($from: md) {
+    margin-bottom: 50px;
+  }
+
+  > * {
+    margin-bottom: 0;
+  }
+
+  > *+* {
+    margin-top: 10px;
+
+    @include mq($from: sm) {
+      margin-top: 25px;
+    }
+  }
+}
+
+.feedback-box__title {
+  font-weight: normal;
+  font-size: rem(24px);
+
+  @include mq($from: sm) {
+    font-size: rem(32px);
+  }
+  @include mq($from: md) {
+    font-size: rem(40px);
+  }
+  @include mq($from: lg) {
+    font-size: rem(60px);
+  }
+}
+
+.feedback-box__subtitle {
+  max-width: 550px;
+  font-size: rem(18px);
+  line-height: 1.4;
+
+  @include mq($until: sm) {
+    font-size: rem(12px);
+  }
+}
+

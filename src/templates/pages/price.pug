@@ -1,0 +1,14 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Цены'
+  - var bodyClass = 'price-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/price/price
+    include ../components/features/features
+    include ../components/stages/stages
+    include ../components/seo/seo
+  include ../components/footer/footer

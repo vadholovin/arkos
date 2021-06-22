@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #STAGES
+   ========================================================================== */
+
+.stages {
+
+  @include mq($from: 1800px) {
+    background-image:
+      url('../img/bg/dots-sm-v-white.svg'),
+      url('../img/bg/dots-sm-h-white.svg'),
+      url('../img/bg/dots-lg-v-white.svg');
+    background-repeat: no-repeat;
+    background-position:
+      left 55px  top 40px,
+      right 90px top 90px,
+      left 60px top 820px;
+  }
+}
+
+.stages-list {
+  display: grid;
+  grid-gap: 15px;
+  gap: 15px;
+  margin-bottom: 0;
+  @include list-unstyled;
+
+  @include mq($from: sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq($from: lg) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    gap: 25px;
+  }
+}
+
+.stages-item {
+  padding: 25px 20px;
+  background: #265475;
+
+  @include mq($from: lg) {
+    padding: 30px;
+  }
+
+  @include mq($from: xl) {
+    padding: 40px;
+  }
+}
+
+.stages-item__title {
+  margin-bottom: 15px;
+  font-size: 1rem;
+
+  @include mq($from: md) {
+    font-size: rem(20px);
+  }
+  @include mq($from: lg) {
+    font-size: rem(26px);
+  }
+}
+
+.stages-item__text {
+
+  @include mq($until: sm) {
+    font-size: rem(12px);
+  }
+}

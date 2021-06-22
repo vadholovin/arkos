@@ -31,11 +31,11 @@
   ]
 
 
-section.section.pt-0.bg-light.requisites
+section.section.pt-0.bg-light.bg-img-triangles.requisites
   .layout
     include ../breadcrumb/breadcrumb
 
-    .requisites-box.rounded.shadow-lg
+    .requisites-box.bg-white.rounded.shadow-lg
       header.requisites-box__header.border-bottom
         h1.requisites-box__title Реквизиты
 
@@ -44,20 +44,22 @@ section.section.pt-0.bg-light.requisites
           .requisites-box__header-note Зарегистрирована 06 января 1993 года
 
       .requisites-box__body
-        ul.requisites-list
-          each item in requisites
-            li.requisites-item
-              span.requisites-item__label= item.label
-              span.requisites-item__text= item.text
+        .requisites-box__body-cell
+          ul.requisites-list
+            each item in requisites
+              li.requisites-item
+                span.requisites-item__label= item.label
+                span.requisites-item__text= item.text
 
-        .requisites-card.rounded
-          figure.requisites-card__img.image-fit
-            img(src="assets/img/content/ceo.jpg", alt="")
-          .requisites-card__body
-            img.requisites-card__logo(src="assets/general/logo-full-blue.svg", alt="")
-            hr.requisites-card__divider
-            .requisites-card__role Генеральный директор:
-            .requisites-card__name Мамченко Анатолий Васильевич
+        .requisites-box__body-cell
+          .requisites-card.rounded
+            .requisites-card__img.image-fit
+              img(src="assets/img/content/ceo.jpg", alt="")
+            .requisites-card__body
+              img.requisites-card__logo(src="assets/img/general/logo-full-blue.svg", alt="")
+              hr.requisites-card__divider
+              .requisites-card__role Генеральный директор:
+              .requisites-card__name Мамченко Анатолий Васильевич
 
       .requisites-box__footer
         .feedback-box.rounded
@@ -65,10 +67,10 @@ section.section.pt-0.bg-light.requisites
             h5.feedback-box__title Остались вопросы
             p.feedback-box__subtitle Оставьте свой номер телефона и наш менеджер перезвонит вам и ответит на все интересующие вопросы
 
-            form.form.inline-form
-              .form-group
-                input.form-control(type='text' placeholder='Ваше имя')
-              .form-group
-                input.form-control(type='tel' placeholder='Ваш номер телефона')
-              .form-group
-                button.btn.btn-primary.wpcf7-submit(type="submit") Отправить
+          form.form.inline-form.inline-form--3-cells
+            .form-group
+              input.form-control(type='text' placeholder='Ваше имя')
+            .form-group
+              input.form-control(type='tel' placeholder='Ваш номер телефона')
+            .form-group
+              button.btn.btn-primary.btn-block.wpcf7-submit(type="submit") Отправить
