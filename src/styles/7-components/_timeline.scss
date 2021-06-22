@@ -1,0 +1,141 @@
+/* ==========================================================================
+   #TIMELINE
+   ========================================================================== */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  @include list-unstyled;
+  counter-reset: timeline;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+
+
+  @include mq($from: sm) {
+    padding-left: 70px;
+  }
+
+  @include mq($from: lg) {
+    padding-left: 100px;
+  }
+
+  &::before {
+    content: counter(timeline);
+    counter-increment: timeline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1.1;
+    color: $primary;
+    background: #ebecf0;
+    z-index: 2;
+
+    @include mq($from: sm) {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+    @include mq($from: lg) {
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+    }
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 0;
+    height: 100%;
+    border-left: 1px solid #f0f0f0;
+    z-index: 1;
+
+    @include mq($from: sm) {
+      left: 20px;
+    }
+    @include mq($from: lg) {
+      left: 30px;
+    }
+  }
+}
+
+.timeline-item__title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  color: $secondary;
+
+  @include mq($from: lg) {
+    padding-top: 8px;
+  }
+
+  > *+* {
+    margin-top: 5px;
+  }
+}
+
+.timeline-item__title-date {
+  font-size: rem(20px);
+  line-height: 1;
+
+  @include mq($from: sm) {
+    font-size: rem(30px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(40px);
+  }
+}
+
+.timeline-item__title-text {
+  font-size: rem(14px);
+  line-height: 1.6;
+
+  @include mq($from: sm) {
+    font-size: rem(20px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(26px);
+  }
+}
+
+.timeline-item__text {
+
+  @include mq($until: sm) {
+    font-size: rem(12px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(20px);
+  }
+}
+
+.timeline-item__divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-color: #f0f0f0;
+
+  @include mq($from: md) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+
+  .timeline-item:last-child & {
+    display: none;
+  }
+}

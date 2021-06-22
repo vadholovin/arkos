@@ -14,10 +14,10 @@
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: 190px;
+  padding-top: 170px;
 
   @include mq($from: md) {
-    padding-top: 140px;
+    padding-top: 125px;
   }
 
   @include mq($from: lg) {

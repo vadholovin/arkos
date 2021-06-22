@@ -1,0 +1,27 @@
+include history.data.pug
+
+
+
+section.section.pt-0.bg-light.bg-img-triangles.history
+  include ../breadcrumb/breadcrumb
+  .layout
+    .history-box.bg-white.rounded.shadow-lg
+      header.history-box__header
+        .history-box__header-img
+          img(src="assets/img/general/logo-full-blue.svg" width="450" height="143" alt="Аркос")
+        .history-box__header-text.
+          - это проектная компания, которая была основана в 1993 году как коллектив единомышленников, стремящихся к достижению общей цели: профессиональное проектирование объектов промышленного и гражданского значения.
+
+      hr.history-box__divider
+
+      .history-box__body
+        h1.history-box__title История
+
+        ol.timeline
+          each item in history
+            li.timeline-item
+              h5.timeline-item__title
+                span.timeline-item__title-date= item.year
+                span.timeline-item__title-text= item.title
+              .timeline-item__text= item.text
+              hr.timeline-item__divider
