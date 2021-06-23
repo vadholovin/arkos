@@ -1,0 +1,55 @@
+/* ==========================================================================
+   #CONTACT-LIST
+   ========================================================================== */
+
+.contact-list {
+  @include list-unstyled;
+
+  > *+* {
+    margin-top: 30px;
+  }
+}
+
+.contact-list__item {
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-template-areas:
+    "contact-icon contact-label"
+    "contact-icon contact-text";
+  grid-column-gap: 12px;
+  column-gap: 12px;
+  grid-row-gap: 5px;
+  row-gap: 5px;
+  line-height: 1.15;
+
+  .svg-icon {
+    grid-area: contact-icon;
+    justify-self: center;
+    font-size: 20px;
+    color: $primary;
+  }
+}
+
+.contact-list__label {
+  grid-area: contact-label;
+  font-size: rem(14px);
+}
+
+.contact-list__text {
+  grid-area: contact-text;
+  font-weight: 600;
+  font-size: rem(20px);
+  color: inherit;
+}
+
+a.contact-list__text {
+  transition: color 0.3s ease-in-out;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+
+  @include on-event {
+    color: $primary;
+    text-decoration: none;
+  }
+}

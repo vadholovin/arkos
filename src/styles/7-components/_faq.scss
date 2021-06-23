@@ -1,0 +1,119 @@
+/* ==========================================================================
+   #FAQ
+   ========================================================================== */
+
+.faq {
+
+  @include mq($from: 1800px) {
+    background-image:
+      url('../img/bg/dots-sm-v-white.svg'),
+      url('../img/bg/dots-sm-h-white.svg'),
+      url('../img/bg/dots-lg-v-white.svg');
+    background-repeat: no-repeat;
+    background-position:
+      left 45px  top 150px,
+      right 60px top 40px,
+      right 60px top 570px;
+  }
+}
+
+.faq-accordion {
+  display: grid;
+  grid-row-gap: 20px;
+  row-gap: 20px;
+  align-items: start;
+
+  @include mq($from: lg) {
+    grid-template-columns: 1fr 1fr;
+      grid-column-gap: 60px;
+      column-gap: 60px;
+  }
+}
+
+.faq-accordion__col {
+
+  > *+* {
+    margin-top: 20px;
+  }
+}
+
+.faq-card {
+  break-inside: avoid;
+  color: #fff;
+  background: #265475;
+}
+
+.faq-card__button {
+  position: relative;
+  padding: 15px 15px 10px 50px;
+  font-weight: bold;
+  font-size: rem(14px);
+  line-height: 1.2;
+  color: inherit;
+
+  @include mq($from: sm) {
+    font-size: rem(16px);
+  }
+  @include mq($from: lg) {
+    padding: 20px 20px 15px 40px;
+    font-size: rem(18px);
+  }
+
+  @include on-event {
+    box-shadow: none;
+    color: #fff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $primary;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m7.1992 0v7.1992h-7.1992v3.6016h7.1992v7.1992h3.6016v-7.1992h7.1992v-3.6016h-7.1992v-7.1992h-3.6016z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45% 45%;
+
+    @include basic-transition((transform));
+
+    @include mq($from: lg) {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &[aria-expanded=true]::before {
+    transform: rotate(-45deg);
+
+    @include mq($from: lg) {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.faq-card__content {
+  padding-left: 50px;
+  padding-right: 15px;
+
+  @include mq($from: lg) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.faq-card__body {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-top: 1px solid rgba(#fff, .1);
+
+  @include mq($from: lg) {
+    padding-top: 15px;
+  }
+}

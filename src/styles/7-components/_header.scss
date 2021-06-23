@@ -178,7 +178,7 @@
     }
   }
 
-  .phonelist__link {
+  .phone-list__link {
     font-size: 18px;
 
     @include mq($from: xl) {
@@ -190,10 +190,10 @@
     }
   }
 
-  .phonelist__text {
+  .phone-list__text {
 
-    @include mq($until: xl) {
-      font-size: 14px;
+    @include mq($from: xl) {
+      font-size: 1rem;
     }
   }
 

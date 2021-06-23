@@ -10,7 +10,6 @@
 
 .social__item {
   margin-right: 10px;
-  margin-bottom: 10px;
 
   &:last-child {
     margin-right: 0;
@@ -24,15 +23,19 @@
   height: 40px;
   border-radius: 1.5px;
   font-size: 18px;
+  color: #fff;
+  background-color: $primary;
   transition: background-color 0.3s ease-in-out;
 
-  .social--light & {
+  @include on-event {
     color: #fff;
+    text-decoration: none;
+  }
+
+  .social--light & {
     background-color: rgba(#fff, .1);
 
     @include on-event {
-      color: #fff;
-      text-decoration: none;
       background-color: rgba(#fff, .25);
     }
   }

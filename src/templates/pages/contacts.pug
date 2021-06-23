@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Что проектируем'
+  - var bodyClass = 'contacts-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/top-block/contacts
+    include ../components/contacts/contacts
+    include ../components/info/info
+    include ../components/benefits/benefits
+    include ../components/seo/seo
+  include ../components/footer/footer

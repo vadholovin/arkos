@@ -1,0 +1,62 @@
+include projects.data.pug
+
+section.section.bg-light.projects
+  .layout
+    header.section__header.projects__header
+      h2.section__title Наши объекты
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+    .project-filters-wrapper.js-project-filters-wrapper
+      .project-filter.js-project-filter
+        p.project-filter__label Год постройки объекта:
+
+        input#project-year(type="hidden")
+        .project-filter__controls.project-filter__controls--cols
+          - var n = 1993
+          while n <= 2020
+            .project-filter-span(
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              data-value=""
+            )= n++
+              | &nbsp;год
+
+
+      .project-filter.js-project-filter
+        p.project-filter__label.d-none.d-lg-block Тип постройки объекта:
+
+        input#project-type(type="hidden")
+        select.form-control.d-lg-none.shadow.border-0.project-filter__select#project-type-select
+          option Тип постройки объекта
+          option Индустриальные предприятия
+          option Химические заводы
+          option Сельскохозяйственные предприятия
+          option Бизнес-центры и торговые центры
+          option Логистические комплексы
+          option Пищевые предприятия
+          option Административные здания
+          option Промышленные объекты
+          option Спортивные сооружения
+        .project-filter__controls.project-filter__controls--cells
+          each item in types
+            .project-filter-card.rounded(
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              data-value=""
+            )
+              span.project-filter-card__icon!= item.img
+              span.project-filter-card__title!= item.title
+
+    .media-list.media-list--projects
+      each card in [1,2,3]
+        .media-card.media-card--projects
+          .media-card__img.rounded.image-fit
+            img(src=`assets/img/content/project/project-${card}.jpg`, alt="")
+          .media-card__body.shadow-lg.rounded.bg-white
+            span.media-card__meta 2006 год
+            h5.media-card__title Завод мерседес
+            .media-card__text.
+              Workki - это сеть многофункциональных офисных пространств в Москве. Рабочие места для комфортной работы, переговорные комнаты для продуктивных встреч и площадки для проведения деловых (и не только) мероприятий. В стоимость аренды уже включены: коммунальные и эксплуатационные расходы, клининг, безлимитный Wi-Fi, печать документов, презентационное оборудование, административная и техническая поддержка, чай, кофе и вода, а также полное обустройство офиса.
+

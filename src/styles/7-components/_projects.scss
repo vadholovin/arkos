@@ -1,0 +1,177 @@
+/* ==========================================================================
+   #PROJECTS
+   ========================================================================== */
+
+.projects {
+
+  @include mq($from: lg) {
+    background-image:
+      url('../img/bg/dots-sm-h-blue.svg'),
+      url('../img/bg/dots-sm-v-blue.svg'),
+      url('../img/bg/triangles.png'),
+      url('../img/bg/triangles.png');
+    background-repeat: no-repeat;
+    background-position:
+      right 30px top 125px,
+      right 210px top 1890px,
+      right 0 top 500px,
+      left 0 top 1185px;
+    background-size: auto;
+  }
+}
+
+.project-filters-wrapper {
+  display: grid;
+  grid-gap: 25px;
+  gap: 25px;
+  margin-bottom: 1.5rem;
+
+  @include mq($from: md) {
+    margin-bottom: 40px;
+  }
+  @include mq($from: lg) {
+    grid-template-columns: 4fr 7fr;
+    margin-bottom: 60px;
+  }
+  @include mq($from: xl) {
+    margin-bottom: 105px;
+  }
+
+}
+
+.project-filter__label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+
+  @include mq($until: sm) {
+    font-size: rem(12px);
+  }
+
+  @include mq($from: lg) {
+    margin-bottom: 24px;
+    font-size: rem(20px);
+  }
+}
+
+.project-filter__controls--cols {
+  column-count: 4;
+}
+
+.project-filter__controls--cells {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  gap: 20px;
+
+  @include mq($until: lg) {
+    display: none;
+  }
+}
+
+.project-filter-span {
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 10px 0;
+  cursor: pointer;
+
+  @include mq($until: sm) {
+    font-size: rem(14px);
+  }
+
+  @include mq($from: lg) {
+    padding: 16px 0;
+    font-size: rem(22px);
+  }
+
+  @include basic-transition((color));
+  @include on-event {
+    color: $primary;
+  }
+
+  &.checked {
+    color: $primary;
+  }
+}
+
+.project-filter-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #fff;
+  cursor: pointer;
+
+  @include mq($from: xl) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @include basic-transition((color, background-color, box-shadow));
+
+  &:hover {
+    color: #fff;
+    background-color: $primary;
+
+    .project-filter-card__icon {
+
+      svg path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.05), 0px 4px 4px rgba(0, 0, 0, 0.05), 0px 32px 32px rgba(0, 0, 0, 0.05), 0px 2px 2px rgba(0, 0, 0, 0.05), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  &.checked {
+    color: #fff;
+    background-color: $primary;
+
+    .project-filter-card__icon {
+
+      svg path {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+.project-filter-card__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  height: 40px;
+
+  @include mq($from: 1200px) {
+    height: 60px;
+  }
+  @include mq($from: xl) {
+    margin-bottom: 15px;
+    height: 90px;
+  }
+
+  svg {
+    height: 100% !important;
+    width: auto !important;
+  }
+}
+
+.project-filter-card__title {
+  font-weight: bold;
+  font-size: rem(12px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  word-break: break-word;
+
+  @include mq($from: 1200px) {
+    font-size: rem(14px);
+  }
+  @include mq($from: xl) {
+    font-size: rem(18px);
+  }
+}
+

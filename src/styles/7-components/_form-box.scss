@@ -4,8 +4,6 @@
 
 .form-box {
   padding: 20px 15px;
-  color: #fff;
-  background: $secondary;
 
   @include mq($from: md) {
     padding: 30px;
@@ -30,9 +28,12 @@
 
 .form-box__title {
   font-weight: normal;
-  font-size: rem(24px);
+  font-size: rem(26px);
 
-  @include mq($from: lg) {
+  @include mq($from: md) {
+    font-size: rem(32px);
+  }
+  @include mq($from: xl) {
     font-size: rem(40px);
   }
 }

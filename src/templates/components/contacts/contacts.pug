@@ -1,0 +1,64 @@
+.section.bg-secondary.contacts
+  .layout
+    .contacts__grid
+      .contacts__main.bg-white.rounded.shadow-lg
+        h2.contacts-title Контакты
+
+        ul.phone-list.phone-list--inline.contacts__phone-list
+          li.phone-list__item
+            a.phone-list__link(href="") 8(800) 123 45-67
+            span.phone-list__text Бесплатно из регионов РФ
+          li.phone-list__item
+            a.phone-list__link(href="") +7(495) 123 45-67
+            span.phone-list__text г. Москва
+
+        ul.contact-list.contacts__contact-list
+          li.contact-list__item
+            +icon('marker')
+            span.contact-list__label Адрес
+            span.contact-list__text г. Москва улица  Куусинена д.19а
+          li.contact-list__item
+            +icon('envelope')
+            span.contact-list__label Почта
+            a.contact-list__text(href="") info@arkos-proekt.ru
+
+        hr.contacts__devider
+
+        .contacts__footer
+          .contacts__footer-group
+            figure.contacts__footer-logo.mb-0
+              img.contacts__footer-logo-img(src="assets/img/general/logo-full-blue.svg", alt="")
+              figcaption.contacts__footer-logo-caption.
+                Проектирование промышленных зданий и сооружений ООО Фирма “АРКОС”
+
+          .contacts__footer-group
+            ul.social.contacts__social
+              li.social__item
+                a.social__link(href="")
+                  +icon('facebook')
+              li.social__item
+                a.social__link(href="")
+                  +icon('whatsapp')
+              li.social__item
+                a.social__link(href="")
+                  +icon('instagram')
+
+            a.underline.font-weight-bolder.text-body(href="") www.arkos.proekt.ru
+
+      .contacts__aside.shadow-lg
+        .form-box.bg-white.rounded
+          header.form-box__header
+            h5.form-box__title Оставьте свои контакты для связи
+            p.form-box__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+
+          form.form.form-box__form
+            .form-group
+              input.form-control.bg-light.border-0(type='text' placeholder='Ваше имя')
+            .form-group
+              input.form-control.bg-light.border-0(type='email' placeholder='Ваш e-mail')
+            .form-group
+              input.form-control.bg-light.border-0(type='tel' placeholder='Ваш номер телефона')
+
+            button.btn.btn-primary.btn-block.wpcf7-submit(type="submit") Отправить
+
+

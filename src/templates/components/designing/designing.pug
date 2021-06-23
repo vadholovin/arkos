@@ -1,0 +1,22 @@
+section.section.bg-light.designing
+  .layout
+    header.section__header.designing__header
+      h2.section__title Наши объекты
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+
+
+    .media-list.media-list--alternate.media-list--designing
+      each item in [1,2,3,4,5,6,7,8]
+        - var num = (item % 2 ===0) ? 2 : 1
+
+        .media-card.media-card--designing
+          .media-card__img.rounded.image-fit
+            img(src=`assets/img/content/project/project-${num}.jpg`, alt="")
+          .media-card__body.shadow-lg.rounded.bg-white
+            span.media-card__meta 2006 год
+            h5.media-card__title Завод мерседес
+            .media-card__text.
+              Workki - это сеть многофункциональных офисных пространств в Москве. Рабочие места для комфортной работы, переговорные комнаты для продуктивных встреч и площадки для проведения деловых (и не только) мероприятий. В стоимость аренды уже включены: коммунальные и эксплуатационные расходы, клининг, безлимитный Wi-Fi, печать документов, презентационное оборудование, административная и техническая поддержка, чай, кофе и вода, а также полное обустройство офиса.
+            a.media-card__link.link-with-arrow(href="") Подробнее об услуге
+

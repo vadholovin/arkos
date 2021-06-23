@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #DESIGNING
+   ========================================================================== */
+
+.designing {
+
+  @include mq($from: lg) {
+    background-image:
+      url('../img/bg/dots-sm-h-blue.svg'),
+      url('../img/bg/dots-sm-v-blue.svg'),
+      url('../img/bg/triangles.png'),
+      url('../img/bg/triangles.png');
+    background-repeat: no-repeat;
+    background-position:
+      right 30px top 125px,
+      right 210px top 1890px,
+      right 0 top 500px,
+      left 0 top 1185px;
+    background-size: auto;
+  }
+}

@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Что проектируем'
+  - var bodyClass = 'designing-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/top-block/designing
+    include ../components/designing/designing
+    include ../components/faq/faq
+    include ../components/docs/docs
+    include ../components/forms/object-form
+    include ../components/seo/seo
+  include ../components/footer/footer

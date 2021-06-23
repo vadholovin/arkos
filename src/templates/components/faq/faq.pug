@@ -1,0 +1,55 @@
+- range = [1,2,3,4,5,6,7,8]
+- total = range.length
+
+section.section.bg-secondary.text-white.faq
+  .layout
+    header.section__header.faq__header
+      h2.section__title Ответы на вопросы
+      p.section__subtitle Проектируем, готовим проектную документацию, проходим экспертизу и разрешение на строительство
+
+    .faq-accordion#faq-accordion
+      .faq-accordion__col
+        each num in [1,2,3,4]
+          .faq-card.rounded.shadow-lg
+            .faq-card__header.rounded(id='faq-heading-' + num)
+              h5.mb-0
+                button.faq-card__button.btn.btn-link.btn-block.text-left(
+                  type='button'
+                  data-toggle='collapse'
+                  data-target='#faq-collapse-' + num
+                  aria-expanded= (num == 1) ? 'true' : 'false'
+                  aria-controls='faq-collapse-' + num
+                )
+                  | Во время общения на онлайн-встрече с президентом РФ студент задал Путину вопрос о дворце в Геленджике?
+            .faq-card__content.collapse(
+              class = (num == 1) ? 'show' : ''
+              id='faq-collapse-' + num
+              aria-labelledby='faq-heading-' + num
+              data-parent='#faq-accordion'
+            )
+              .faq-card__body.
+                И там тоже след должен остаться. В нотариальных книгах, в электронном виде… вместо всего это что? Ну, разместили мою фотографию или моё плавание в стиле "баттерфляй" — я так корявенько, но иногда люблю так поплавать — в каком-то бассейне, где я никогда не был. И не знаю что это за бассейн. Но я так плавал. Когда и где? В Енисее в 2016 году.
+
+
+      .faq-accordion__col
+        each num in [5,6,7,8]
+          .faq-card.rounded.shadow-lg
+            .faq-card__header.rounded(id='faq-heading-' + num)
+              h5.mb-0
+                button.faq-card__button.btn.btn-link.btn-block.text-left(
+                  type='button'
+                  data-toggle='collapse'
+                  data-target='#faq-collapse-' + num
+                  aria-expanded= (num == 1) ? 'true' : 'false'
+                  aria-controls='faq-collapse-' + num
+                )
+                  | Во время общения на онлайн-встрече с президентом РФ студент задал Путину вопрос о дворце в Геленджике?
+            .faq-card__content.collapse(
+              class = (num == 1) ? 'show' : ''
+              id='faq-collapse-' + num
+              aria-labelledby='faq-heading-' + num
+              data-parent='#faq-accordion'
+            )
+              .faq-card__body.
+                И там тоже след должен остаться. В нотариальных книгах, в электронном виде… вместо всего это что? Ну, разместили мою фотографию или моё плавание в стиле "баттерфляй" — я так корявенько, но иногда люблю так поплавать — в каком-то бассейне, где я никогда не был. И не знаю что это за бассейн. Но я так плавал. Когда и где? В Енисее в 2016 году.
+
