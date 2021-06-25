@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #FILES
+   ========================================================================== */
+
+.files-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+
+  @include on-event {
+
+    .files-item__action {
+      text-decoration: none;
+    }
+  }
+}
+
+.files-item__icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 44px;
+
+  @include mq($from: lg) {
+    margin-bottom: 15px;
+  }
+}
+
+.files-item__title {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: rem(14px);
+  line-height: 1.1;
+
+  @include mq($from: md) {
+    font-size: rem(16px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(20px);
+  }
+}
+
+.files-item__action {
+  font-weight: 600;
+  font-size: rem(12px);
+  line-height: 1.7;
+
+  @include mq($from: lg) {
+    font-size: rem(14px);
+  }
+}

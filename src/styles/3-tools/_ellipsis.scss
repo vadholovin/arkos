@@ -8,7 +8,7 @@
 
 @mixin ellipsis($font-size, $line-height, $lines) {
   display: -webkit-box;
-  max-height: calc($font-size * $line-height * $lines);
+  max-height: calc(#{$font-size} * #{$line-height} * #{$lines});
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $lines;
   overflow: hidden;

@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Важно для заказчика'
+  - var bodyClass = 'customer-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/top-block/customer
+    //- include ../components/info-set/info-set
+    include ../components/papers/papers
+    include ../components/staff/staff
+    include ../components/forms/law-form
+    include ../components/seo/seo
+  include ../components/footer/footer

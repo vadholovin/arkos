@@ -1,0 +1,283 @@
+/* ==========================================================================
+   #INFO
+   ========================================================================== */
+
+.info {
+  position: relative;
+  z-index: 1;
+
+  @include mq($until: 992px) {
+    padding-bottom: 180px;
+  }
+
+  @include mq($from: 1800px) {
+    background-image:
+      url('../img/bg/dots-sm-h-blue.svg'),
+      url('../img/bg/dots-lg-v-blue.svg'),
+      url('../img/bg/dots-lg-v-blue.svg');
+    background-repeat: no-repeat;
+    background-position:
+      right 130px top 90px,
+      right 70px top 650px,
+      left 55px top 140px;
+  }
+}
+
+$info-spacer: 32px !default;
+$info-spacer-lg: 60px !default;
+
+.info__grid {
+  display: grid;
+
+  @include mq($from: 992px) {
+    grid-template-columns: 11fr 10fr;
+    grid-gap: $info-spacer;
+    gap: $info-spacer;
+  }
+
+  @include mq($from: xl) {
+    grid-gap: $info-spacer-lg;
+    gap: $info-spacer-lg;
+  }
+}
+
+.info__grid-cell {
+
+  &:last-child {
+    @include mq($until: 992px) {
+      display: none;
+    }
+  }
+
+  > *+* {
+
+    @include mq($from: 992px) {
+      margin-top: $info-spacer;
+    }
+
+    @include mq($from: xl) {
+      margin-top: $info-spacer-lg;
+    }
+  }
+}
+
+.info-module {
+  position: relative;
+
+  &:first-child {
+    z-index: 1;
+  }
+
+  @include mq($until: 992px) {
+    margin-left: -32px;
+    margin-right: -32px;
+  }
+
+  @include mq($until: md) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  @include mq($from: 992px) {
+    height: calc(100% / 2 - #{$info-spacer / 2});
+  }
+
+  @include mq($from: xl) {
+    height: calc(100% / 2 - #{$info-spacer-lg / 2});
+  }
+}
+
+.info-module__media {
+  position: relative;
+  height: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+
+    @include mq($from: 992px) {
+      padding-top: percentage(400 / 700);
+    }
+  }
+
+  &--picture {
+
+    @include mq($until: 992px) {
+      max-height: 400px;
+    }
+
+    &::before {
+
+      @include mq($until: 992px) {
+        padding-top: percentage(360 / 320);
+      }
+    }
+  }
+}
+
+.info-module__media--picture {
+
+}
+
+.info-module__media--map {
+  background-color: #ddd;
+
+  @include mq($until: 992px) {
+    height: 690px;
+  }
+}
+
+.info-module__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  transform: translateY(50%);
+
+  @include mq($from: 992px) {
+    display: none !important;
+  }
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+
+
+  @include mq($from: 992px) {
+    flex-direction: row;
+    padding: 40px;
+    text-align: left;
+  }
+
+  @include mq($from: lg) {
+    padding: 50px;
+  }
+}
+
+.info-card__img {
+  display: flex;
+  align-items: center;
+
+
+  @include mq($from: 992px) {
+    flex-shrink: 0;
+    width: calc(100% / 3);
+    margin-right: 40px;
+    border-right: 1px solid #F0F0F0;
+  }
+
+  @include mq($from: xl) {
+    margin-right: 50px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    @include mq($until: 992px) {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    @include mq($until: sm) {
+      width: 80px;
+    }
+  }
+}
+
+.info-card__body {
+  flex-grow: 1;
+  flex-basis: 0;
+
+
+}
+
+.info-card__title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1;
+  color: $secondary;
+}
+
+.info-card__title-num {
+  display: block;
+  @include fluid-type(320px, 1800px, 50px, 120px);
+}
+
+.info-card__title-text {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase
+}
+
+.info-card__text {
+  max-width: 270px;
+  line-height: 1.2;
+
+  @include mq($until: 992px) {
+    font-size: rem(14px);
+  }
+}
+
+.info-span {
+  padding: 30px 20px 20px 20px;
+
+  @include mq($from: lg) {
+    padding: 60px;
+  }
+}
+
+.info-span__title {
+  margin-bottom: 15px;
+  font-size: rem(26px);
+  line-height: 1.1;
+
+  @include mq($from: 992px) {
+    margin-bottom: 25px;
+    font-size: rem(32px);
+  }
+  @include mq($from: lg) {
+    font-size: rem(40px);
+  }
+  @include mq($from: xl) {
+    font-size: rem(56px);
+  }
+}
+
+.info-span__text {
+  margin-bottom: 40px;
+
+  @include mq($until: 992px) {
+    margin-bottom: 15px;
+    font-size: rem(12px);
+  }
+
+  @include mq($from: lg) {
+    font-size: rem(18px);
+    line-height: 1.6;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info-span__btn {
+  width: 100%;
+  max-width: 380px;
+
+  @include mq($until: sm) {
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+

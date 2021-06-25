@@ -21,6 +21,13 @@
     margin-bottom: 70px;
   }
 
+  &--page {
+
+    @include mq($from: md) {
+      margin-bottom: 40px;
+    }
+  }
+
   &--center {
     align-items: center;
     text-align: center;
@@ -32,6 +39,7 @@
 }
 
 .section__title {
+  margin-bottom: 0;
   font-size: rem(24px);
 
   @include mq($from: md) {

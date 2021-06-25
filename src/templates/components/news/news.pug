@@ -1,0 +1,20 @@
+include news.data.pug
+
+
+section.section.pt-0.bg-light.bg-img-triangles.news
+  include ../breadcrumb/breadcrumb
+  .layout
+    header.section__header.section__header--page.projects__header
+      h1.section__title Новости
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+    .news-grid
+      each card, index in news
+        .news-card
+          a.news-card__img.image-fit.image-fit--hover(href="")
+            img(src="assets/img/content/news/" + card.img, alt="")
+          .news-card__body
+            span.news-card__date 01.08.2018
+            a(href="")
+              h5.news-card__title.text-body.text-decoration-none= card.title
+            .news-card__text= card.text
