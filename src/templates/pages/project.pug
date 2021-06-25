@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Карточка объекта'
+  - var bodyClass = 'project-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/projects/project
+    include ../components/features/features
+    include ../components/seo/seo
+  include ../components/footer/footer

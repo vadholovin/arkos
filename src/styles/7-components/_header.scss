@@ -29,17 +29,45 @@
 }
 
 .header__top {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   display: flex;
+  height: 70px;
   padding-top: 15px;
   padding-bottom: 15px;
   z-index: 10;
   background-color: $secondary;
 
+  @include basic-transition((padding, height), 0.15s);
+
+  @include mq($from: lg) {
+    height: 90px;
+  }
+
   @include mq($from: 1300px) {
+    height: 100px;
     padding-top: 28px;
     padding-bottom: 18px;
     justify-content: space-between;
+  }
+
+  @include mq($from: 1800px) {
+    height: 120px;
+  }
+
+  .header--scrolled & {
+    height: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include mq($from: 1800px) {
+      height: 90px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 
   > *+* {
@@ -71,12 +99,22 @@
     width: auto;
     height: 40px;
 
+    @include basic-transition((height), 0.15s);
+
     @include mq($from: lg) {
       height: 60px;
     }
 
     @include mq($from: 1800px) {
       height: 80px;
+    }
+
+    .header--scrolled & {
+      height: 40px;
+
+      @include mq($from: 1800px) {
+        height: 60px;
+      }
     }
   }
 
@@ -232,6 +270,7 @@
   align-items: center;
   text-align: center;
   padding-bottom: 15px;
+  padding-top: 70px;
 
   @include mq($from: lg) {
     display: none;

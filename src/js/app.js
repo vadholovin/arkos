@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/**
+ * Header scroll
+ */
+jQuery(function ($) {
+  $(window).on('scroll', function() {
+    const offsetY = $(window).scrollTop();
+    const activeClass = 'header--scrolled';
+
+    if ( offsetY > 300) {
+      $('.js-header').addClass(activeClass);
+    } else {
+      $('.js-header').removeClass(activeClass);
+    }
+  });
+});
+
 
 /**
  * Simplebar
@@ -214,6 +230,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   initDocsSlider();
+
+  function initProjectSlider() {
+    const projectThumbs = new Swiper('.js-project-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      breakpoints: {
+        768: {
+          spaceBetween: 5
+        },
+      },
+    });
+
+    const projectSlider = new Swiper('.js-project-slider', {
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      thumbs: {
+        swiper: projectThumbs,
+      },
+    });
+  }
+
+  initProjectSlider();
 });
 
 

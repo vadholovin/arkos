@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #QUALITY
+   ========================================================================== */
+
+.quality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include mq($from: lg) {
+    flex-direction: row;
+    text-align: left;
+    background-image: url('../img/content/quote.svg');
+    background-repeat: no-repeat;
+    background-position: right 30px top 50%;
+    background-size: auto 100%;
+  }
+
+  @include mq($from: 1200px) {
+    background-position: center;
+  }
+}
+
+.quality__logos {
+  display: flex;
+  margin-bottom: 15px;
+
+  @include mq($from: lg) {
+    margin-right: 60px;
+    margin-bottom: 0;
+  }
+
+  > *+* {
+    margin-left: 34px;
+
+    @include mq($from: lg) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.quality__logo {
+  width: 108px;
+  max-width: 100%;
+  height: auto;
+
+  @include mq($from: lg) {
+    width: 120px;
+  }
+  @include mq($from: 1200px) {
+    width: 151px;
+  }
+}
+
+.quality__text {
+  font-weight: 300;
+  line-height: 1.6;
+  font-style: italic;
+
+  @include mq($until: sm) {
+    font-size: rem(12px);
+  }
+
+  @include mq($from: lg) {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: rem(20px);
+  }
+}
+
