@@ -51,6 +51,7 @@ exports.paths = {
       'node_modules/svg4everybody/dist/svg4everybody.min.js',
       'node_modules/swiper/js/swiper.min.js',
       'node_modules/simplebar/dist/simplebar.min.js',
+      'node_modules/glightbox/dist/js/glightbox.min.js',
       // 'node_modules/jarallax/dist/jarallax.min.js',
       // 'node_modules/jarallax/dist/jarallax-video.min.js',
       // 'node_modules/nouislider/distribute/nouislider.min.js',

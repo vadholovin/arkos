@@ -65,6 +65,7 @@
 }
 
 .team-slide {
+  height: auto;
 
   @include mq($until: sm) {
     width: 100%;
@@ -75,9 +76,11 @@
 .team-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .team-card__img {
+  flex-shrink: 0;
   position: relative;
   padding-top: percentage(240 / 290);
   border-radius: 3px 3px 0 0;
@@ -119,6 +122,7 @@
 }
 
 .team-card__body {
+  flex-grow: 1;
   padding: 15px;
   border-radius: 0 0 3px 3px;
   background-color: #fff;

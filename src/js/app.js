@@ -302,3 +302,108 @@ jQuery(function ($) {
   $(window).on('resize', initServices);
 
 });
+
+
+/**
+ * Lightbox
+ */
+document.addEventListener('DOMContentLoaded', function () {
+function initLightbox() {
+  const videoLightbox = GLightbox({
+    selector: '.js-lightbox-video',
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: true,
+  });
+
+  const imageLightbox = GLightbox({
+    selector: '.js-lightbox-image',
+    touchNavigation: true,
+    loop: true,
+  });
+}
+
+initLightbox();
+});
+
+
+/**
+ * Form
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  function setObjectFormFields() {
+    const outerObjectType = document.querySelector('#object-type-outer');
+    const outerObjectArea = document.querySelector('#object-area-outer');
+    const innerObjectType = document.querySelector('#object-type-inner');
+    const innerObjectArea = document.querySelector('#object-area-inner');
+    const objectType = document.querySelector('#object-type');
+    const objectArea = document.querySelector('#object-area');
+
+    outerObjectType.addEventListener('input', event => {
+      fieldToField(outerObjectType, objectType);
+    });
+
+    innerObjectType.addEventListener('input', event => {
+      fieldToField(innerObjectType, objectType);
+    });
+
+    outerObjectArea.addEventListener('input', event => {
+      fieldToField(outerObjectArea, objectArea);
+    });
+
+    innerObjectArea.addEventListener('input', event => {
+      fieldToField(innerObjectArea, objectArea);
+    });
+  }
+
+  setObjectFormFields();
+
+  function grabCheckboxes() {
+    const customCheckboxes = document.querySelectorAll('.js-form-checkboxes');
+
+    customCheckboxes.forEach(group => {
+
+      group.addEventListener('click', event => {
+        if (!event.target.getAttribute('data-value') || event.target.getAttribute('aria-checked') === 'true') return;
+
+        const checkbox = event.target;
+        const value = checkbox.dataset.value;
+        const field = group.querySelector('input[type=hidden]');
+        const checkboxes = group.querySelectorAll('[data-value]');
+
+        checkboxes.forEach(control => {
+          control.classList.remove('checked');
+          control.setAttribute('aria-checked', 'false');
+        });
+
+        checkbox.classList.add('checked');
+        checkbox.setAttribute('aria-checked', 'true');
+        field.value = value;
+        triggerInput(field);
+      });
+    });
+  }
+
+  grabCheckboxes();
+
+  function fieldToField(source, target) {
+    target.value = source.value;
+  }
+
+  function triggerInput(element) {
+    const eventInput = new InputEvent('input', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+
+    const eventChange = new Event('change', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+
+    element.dispatchEvent(eventInput);
+    element.dispatchEvent(eventChange);
+  }
+});
