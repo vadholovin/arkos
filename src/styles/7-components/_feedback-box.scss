@@ -51,6 +51,9 @@
     font-size: rem(40px);
   }
   @include mq($from: lg) {
+    font-size: rem(50px);
+  }
+  @include mq($from: xl) {
     font-size: rem(60px);
   }
 }

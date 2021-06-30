@@ -364,21 +364,32 @@ document.addEventListener('DOMContentLoaded', function () {
     customCheckboxes.forEach(group => {
 
       group.addEventListener('click', event => {
-        if (!event.target.getAttribute('data-value') || event.target.getAttribute('aria-checked') === 'true') return;
+        if (!event.target.getAttribute('data-value')) return;
 
         const checkbox = event.target;
         const value = checkbox.dataset.value;
-        const field = group.querySelector('input[type=hidden]');
+        const field = group.querySelector('.js-filter');
         const checkboxes = group.querySelectorAll('[data-value]');
 
         checkboxes.forEach(control => {
-          control.classList.remove('checked');
-          control.setAttribute('aria-checked', 'false');
+
+          if (control != checkbox) {
+            control.classList.remove('checked');
+            control.setAttribute('aria-checked', 'false');
+          }
         });
 
-        checkbox.classList.add('checked');
-        checkbox.setAttribute('aria-checked', 'true');
-        field.value = value;
+        checkbox.classList.toggle('checked');
+        let checked = checkbox.getAttribute('aria-checked') === 'true';
+
+        if (checked) {
+          checkbox.setAttribute('aria-checked', 'false');
+          field.value = '';
+        } else {
+          checkbox.setAttribute('aria-checked', 'true');
+          field.value = value;
+        }
+
         triggerInput(field);
       });
     });
