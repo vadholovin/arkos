@@ -1,0 +1,152 @@
+/* ==========================================================================
+   #POST
+   ========================================================================== */
+
+.post-wrapper {
+
+  > *+* {
+    margin-top: 20px;
+  }
+}
+
+.post {
+  padding: 20px 12px 20px 12px;
+  border-top: 6px solid $primary;
+
+  @include mq($from: md) {
+    padding: 24px 24px 28px 24px;
+    border-top-width: 10px;
+  }
+}
+
+.post__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
+
+
+  @include mq($from: sm) {
+    padding-left: 48px;
+  }
+
+  > *+* {
+    margin-top: 12px;
+  }
+}
+
+.post__date {
+  color: $gray-500;
+
+  @include mq($until: sm) {
+    font-size: rem(14px);
+  }
+}
+
+.post__title {
+  position: relative;
+  max-width: 570px;
+  font-size: rem(18px);
+  text-transform: uppercase;
+
+  @include mq($from: md) {
+    font-size: rem(24px);
+  }
+  @include mq($from: lg) {
+    font-size: rem(30px);
+  }
+
+  &::before {
+
+    @include mq($from: sm) {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -20px;
+      transform: translate(-100%, 50%) rotate(45deg);
+      width: 24px;
+      height: 24px;
+      background: $primary;
+      border-radius: 2px;
+    }
+  }
+}
+
+.post__img {
+  margin-bottom: 26px;
+
+  &::before {
+    padding-top: percentage(384 / 940);
+  }
+}
+
+.post-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq($from: 992px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.post-share {
+  max-width: 300px;
+
+  @include mq($until: 992px) {
+    margin-bottom: 20px;
+  }
+}
+
+.post-nav {
+  display: flex;
+
+  @include mq($until: 992px) {
+    justify-content: space-between;
+  }
+}
+
+.post-nav__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid $secondary;
+  border-radius: 4px;
+  color: inherit;
+
+  @include basic-transition((color));
+
+  @include mq($until: sm) {
+    font-size: rem(14px);
+  }
+
+  @include mq($from: lg) {
+    padding: 24px;
+    font-size: rem(18px);
+  }
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  > *+* {
+
+
+    @include mq($from: sm) {
+      margin-left: 24px;
+    }
+  }
+}
+
+.post-nav__link-icon {
+  font-size: 20px;
+  color: $primary;
+}
+
+.post-nav__link-text {
+
+  @include mq($until: sm) {
+    @include sr-only;
+  }
+}

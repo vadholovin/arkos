@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Отдельная новость'
+  - var bodyClass = 'news-single-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/news/news-single-content
+  include ../components/footer/footer
