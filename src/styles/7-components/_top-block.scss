@@ -19,6 +19,10 @@
   }
 }
 
+.top-block--projects {
+  background-color: $gray-100;
+}
+
 .top-block__inner {
   display: flex;
   flex-direction: column;
@@ -28,6 +32,10 @@
     flex-direction: row;
     align-items: center;
   }
+
+  .top-block--projects & {
+    min-height: auto;
+  }
 }
 
 .top-block__main {
@@ -35,6 +43,10 @@
 
   @include mq($from: lg) {
     width: 58%;
+  }
+
+  .top-block--projects & {
+    width: 100%;
   }
 }
 
@@ -206,4 +218,3 @@
     object-fit: cover;
   }
 }
-
