@@ -44,18 +44,24 @@
   padding-left: 15px;
   padding-right: 15px;
 
-  @include mq($from: md) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  &:not(.layout--narrow) {
+    @include mq($from: md) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
 
-  @include mq($from: lg) {
-    padding-left: 64px;
-    padding-right: 64px;
+    @include mq($from: lg) {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
   }
 
   @include mq($from: xl) {
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+.layout--narrow {
+  max-width: 1020px;
 }
