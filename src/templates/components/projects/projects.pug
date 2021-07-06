@@ -1,32 +1,28 @@
 include projects.data.pug
 
-section.section.bg-light.projects
+section.section.bg-light.projects.pt-0
   .layout
-    header.section__header.projects__header
-      h2.section__title Наши объекты
-      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 
     .project-filters-wrapper.js-project-filters-wrapper
       .project-filter.js-project-filter
         p.project-filter__label Год постройки объекта:
 
-        input#project-year(type="hidden")
-        .project-filter__controls.project-filter__controls--cols
-          - var n = 1993
-          while n <= 2020
-            .project-filter-span(
-              role="checkbox"
-              aria-checked="false"
-              tabindex="0"
-              data-value=""
-            )= n++
-              | &nbsp;год
+        .project-filter__controls.project-filter__controls--years
+          each item, index in ['1993-1996', '1996-1999', '1999-2002', '2002-2005', '2005-2008', '2008-2011', '2011-2014', '2014-2017', '2017-2020']
+            .project-filter-btn
+              input.project-filter-btn__input.sr-only(
+                id="year-" + item
+                type="radio"
+                name="year"
+                value= item
+                checked= (index == 0) ? 'checked' : false
+              )
+              label.project-filter-btn__label(for="year-" + item)= item + ' гг.'
 
 
       .project-filter.js-project-filter
         p.project-filter__label.d-none.d-lg-block Тип постройки объекта:
 
-        input#project-type(type="hidden")
         select.form-control.d-lg-none.shadow.border-0.project-filter__select#project-type-select
           option Тип постройки объекта
           option Индустриальные предприятия
@@ -38,25 +34,43 @@ section.section.bg-light.projects
           option Административные здания
           option Промышленные объекты
           option Спортивные сооружения
-        .project-filter__controls.project-filter__controls--cells
-          each item in types
-            .project-filter-card.rounded(
-              role="checkbox"
-              aria-checked="false"
-              tabindex="0"
-              data-value=""
-            )
-              span.project-filter-card__icon!= item.img
-              span.project-filter-card__title!= item.title
 
-    .media-list.media-list--projects
-      each card in [1,2,3]
-        .media-card.media-card--projects
-          .media-card__img.rounded.image-fit
-            img(src=`assets/img/content/project/project-${card}.jpg`, alt="")
-          .media-card__body.shadow-lg.rounded.bg-white
-            span.media-card__meta 2006 год
-            h5.media-card__title Завод мерседес
-            .media-card__text.
-              Workki - это сеть многофункциональных офисных пространств в Москве. Рабочие места для комфортной работы, переговорные комнаты для продуктивных встреч и площадки для проведения деловых (и не только) мероприятий. В стоимость аренды уже включены: коммунальные и эксплуатационные расходы, клининг, безлимитный Wi-Fi, печать документов, презентационное оборудование, административная и техническая поддержка, чай, кофе и вода, а также полное обустройство офиса.
+        .project-filter__controls.project-filter__controls--types
+          each item, index in types
+            .project-filter-card.rounded
+              input.project-filter-card__input.sr-only(
+                id="type-" + (index + 1)
+                type="radio"
+                name="type"
+                value=""
+                checked= (index == 0) ? 'checked' : false
+              )
+              label.project-filter-card__label(for="type-" + (index + 1))
+                span.project-filter-card__icon!= item.img
+                span.project-filter-card__title!= item.title
+
+    .project-list
+      each card in [1,2,3,4]
+        .project-card.rounded.bg-white
+          a.project-card__img.image-fit.image-fit--hover(href="")
+            img(src=`assets/img/content/project/prj-${card}.jpg`, alt="")
+          .project-card__body
+            .project-card__text-content
+              a.project-card__title(href="")
+                h5 Завод по производству трубных систем “Аделант”
+              p.project-card__text.
+                Разнообразный и богатый опыт говорит нам, что семантический разбор внешних противодействий говорит о возможностях кластеризации усилий. Задача организации, в особенности же перспективное планирование.
+            .project-card__text-content
+              ul.project-card__meta
+                li.project-card__meta-item.d-flex.flex-column
+                  span.project-card__meta-label Год
+                  span.project-card__meta-text 2003 г
+                li.project-card__meta-item.d-flex.flex-column
+                  span.project-card__meta-label Тип
+                  span.project-card__meta-text Промышленное предприятие
+                li.project-card__meta-item.project-card__meta-item--icon.d-flex.flex-column
+                  +icon('marker').project-card__meta-icon
+                  span.project-card__meta-text г. Жуков, Калужская область
+
+
 
