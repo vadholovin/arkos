@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Страница отдельной услуги'
+  - var bodyClass = 'service-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/services/service
+    include ../components/features/features
+    include ../components/info-set/info-set-collapsed
+    include ../components/forms/object-form
+    include ../components/seo/seo
+  include ../components/footer/footer

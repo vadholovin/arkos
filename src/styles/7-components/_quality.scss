@@ -11,14 +11,14 @@
   @include mq($from: lg) {
     flex-direction: row;
     text-align: left;
-    background-image: url('../img/content/quote.svg');
-    background-repeat: no-repeat;
-    background-position: right 30px top 50%;
-    background-size: auto 100%;
   }
+}
 
-  @include mq($from: 1200px) {
-    background-position: center;
+.quality--banner {
+  padding: 30px 20px;
+
+  @include mq($from: lg) {
+    padding: 32px;
   }
 }
 
@@ -65,7 +65,17 @@
   @include mq($from: lg) {
     flex-grow: 1;
     flex-basis: 0;
+    padding-top: 40px;
+    padding-bottom: 28px;
     font-size: rem(20px);
+    background-image: url('../img/content/quote.svg');
+    background-repeat: no-repeat;
+    background-position: right 30px top 0;
+    background-size: auto 100%;
+  }
+
+  @include mq($from: 1200px) {
+    background-position: 160px 0;
   }
 }
 
