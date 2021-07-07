@@ -257,6 +257,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   initProjectSlider();
+
+  function initRelatedSlider() {
+    if (document.querySelectorAll('.js-related-slider').length) {
+      const relatedSlider = new Swiper('.js-related-slider', {
+        loop: true,
+        spaceBetween: 12,
+        keyboard: {
+          enabled: true,
+        },
+        navigation: {
+          nextEl: '.js-related-wrapper .swiper-button-next',
+          prevEl: '.js-related-wrapper .swiper-button-prev',
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    }
+  }
+
+  initRelatedSlider();
 });
 
 

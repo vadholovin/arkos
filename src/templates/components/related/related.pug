@@ -1,0 +1,24 @@
+.section.pt-0.bg-light.related
+  .layout
+    h1.section__title.related__title.text-uppercase.mb-4 Реализованные проекты
+
+    .swiper-block.related-wrapper.js-related-wrapper
+      .swiper-container.related-slider.js-related-slider
+        .swiper-wrapper
+          each item in [1,2,3,4,5]
+            .swiper-slide.object-slide
+              .object-card
+                a.object-card__img.image-cutted(href="")
+                  img(src=`assets/img/content/object/object-${item}.jpg`, alt="")
+                .object-card__body
+                  a(href="")
+                    h5.object-card__title
+                      | Завод по производству трубных систем “аделант”
+                  a.object-card__link.link-with-arrow(href="") Смотреть проект
+                  p.object-card__text.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis
+
+      .swiper-button-prev
+        +icon('chevron-left')
+      .swiper-button-next
+        +icon('chevron-right')

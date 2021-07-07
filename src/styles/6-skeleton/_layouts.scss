@@ -54,11 +54,11 @@
       padding-left: 64px;
       padding-right: 64px;
     }
-  }
 
-  @include mq($from: xl) {
-    padding-left: 15px;
-    padding-right: 15px;
+    @include mq($from: xl) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }
 

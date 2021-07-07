@@ -72,7 +72,7 @@
   text-transform: uppercase;
   word-break: break-word;
 
-  @include mq($from: md) {
+  @include mq($from: xl) {
     font-size: rem(20px);
   }
 }

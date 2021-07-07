@@ -11,7 +11,7 @@ section.section.bg-light.form-banner.form-banner--services.pt-0
 
         .form-banner__controls
           .form-banner-checkboxes
-            input#object-area-outer(type="hidden")
+            input#object-type-outer(type="hidden")
 
             each item in checkboxes
               button.form-banner-checkbox(
@@ -26,7 +26,7 @@ section.section.bg-light.form-banner.form-banner--services.pt-0
 
 
           .form-group
-            select.form-control#object-area-select-outer
+            select.form-control#object-area-outer
               option ВЫБЕРИТЕ ПЛОЩАДЬ ОБЪЕКТА
               option 100 м2
               option 500 м2
@@ -45,7 +45,7 @@ section.section.bg-light.form-banner.form-banner--services.pt-0
             input#object-area(type="hidden", name="object-area")
 
             .form-group.d-lg-none
-              select.form-control#object-type-select
+              select.form-control#object-type-inner
                 option ВЫБЕРИТЕ ТИП ОБЪЕКТА
                 option Индустриальные предприятия
                 option Химические заводы
@@ -58,7 +58,7 @@ section.section.bg-light.form-banner.form-banner--services.pt-0
                 option Спортивные сооружения
 
             .form-group.d-lg-none
-              select.form-control#object-area-select
+              select.form-control#object-area-inner
                 option ВЫБЕРИТЕ ПЛОЩАДЬ ОБЪЕКТА
                 option 100 м2
                 option 500 м2

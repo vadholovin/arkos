@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Тип объекта'
+  - var bodyClass = 'type-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/type/type
+    include ../components/related/related
+    include ../components/features/features
+    include ../components/faq/faq
+    include ../components/docs/docs
+    include ../components/forms/object-form
+    include ../components/seo/seo
+  include ../components/footer/footer

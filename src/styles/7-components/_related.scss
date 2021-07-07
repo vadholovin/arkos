@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #RELATED
+   ========================================================================== */
+
+.related__title {
+  margin-bottom: 32px;
+
+  @include mq($from: md) {
+    margin-bottom: 40px;
+  }
+}
+
+.related-wrapper {
+
+  .swiper-button-prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .swiper-button-next {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+.related-slider {
+  filter: drop-shadow(0px 16px 34px rgba(0, 0, 0, 0.1));
+}

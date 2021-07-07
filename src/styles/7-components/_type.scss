@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #TYPE
+   ========================================================================== */
+
+.type-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 36px;
+  gap: 36px;
+
+  @include mq($from: lg) {
+    grid-template-columns: 3fr 2fr;
+  }
+  @include mq($from: xl) {
+    grid-template-columns: 4fr 3fr;
+  }
+
+}
+
+.type__main {
+
+}
+
+.type__title {
+  margin-bottom: 24px;
+}
+
+// .type__content {
+
+// }
+
+.type__img {
+
+  @include mq($until: lg) {
+    max-height: 400px;
+    margin: 0 auto;
+  }
+
+  &::before {
+    padding-top: percentage(666 / 596);
+  }
+}
