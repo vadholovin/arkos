@@ -26,6 +26,11 @@
 .top-block__inner {
   display: flex;
   flex-direction: column;
+  padding-bottom: 24px;
+
+  @include mq($from: md) {
+    padding-bottom: 60px;
+  }
 
   @include mq($from: lg) {
     min-height: 470px;

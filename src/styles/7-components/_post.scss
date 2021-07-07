@@ -9,7 +9,7 @@
   }
 }
 
-.post {
+.post__block {
   padding: 20px 12px 20px 12px;
   border-top: 6px solid $primary;
 
@@ -79,7 +79,7 @@
   }
 }
 
-.post-footer {
+.post__footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -91,7 +91,7 @@
   }
 }
 
-.post-share {
+.post__share {
   max-width: 300px;
 
   @include mq($until: 992px) {
