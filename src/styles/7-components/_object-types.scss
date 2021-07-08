@@ -36,6 +36,9 @@
 }
 
 .object-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: $border-radius;
   background-color: #fff;
   overflow: hidden;
@@ -159,6 +162,7 @@
 
     @include mq($from: lg) {
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
     }
   }
 }

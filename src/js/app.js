@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function initRelatedSlider() {
     if (document.querySelectorAll('.js-related-slider').length) {
       const relatedSlider = new Swiper('.js-related-slider', {
-        loop: true,
+        // loop: true,
         spaceBetween: 12,
         keyboard: {
           enabled: true,

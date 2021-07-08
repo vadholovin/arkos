@@ -8,6 +8,7 @@
 
 .swiper-slide {
   box-sizing: border-box;
+  height: auto;
 }
 
 .swiper-button-prev,
@@ -48,6 +49,7 @@
 }
 
 .swiper-button-disabled {
+  display: none;
   opacity: unset;
   color: #808080;
   background-color: #f0f0f0;

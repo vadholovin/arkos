@@ -115,7 +115,7 @@
   border-radius: 4px;
   color: inherit;
 
-  @include basic-transition((color));
+  @include basic-transition((color, border-color));
 
   @include mq($until: sm) {
     font-size: rem(14px);
@@ -124,6 +124,10 @@
   @include mq($from: lg) {
     padding: 24px;
     font-size: rem(18px);
+  }
+
+  @include on-event {
+    border-color: $primary;
   }
 
   &:not(:last-child) {
