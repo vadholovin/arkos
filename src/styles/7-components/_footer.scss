@@ -226,7 +226,6 @@
 .footer__map {
   width: 260px;
   height: 260px;
-  background-color: #eee;
 
   @include mq($until: md) {
     display: none;

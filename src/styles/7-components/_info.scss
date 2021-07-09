@@ -115,12 +115,7 @@ $info-spacer-lg: 60px !default;
   }
 }
 
-.info-module__media--picture {
-
-}
-
 .info-module__media--map {
-  background-color: #ddd;
 
   @include mq($until: 992px) {
     height: 690px;
