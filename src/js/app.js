@@ -361,6 +361,21 @@ initLightbox();
  * Form
  */
 document.addEventListener('DOMContentLoaded', function () {
+  const wpcf7Elms = document.querySelectorAll('.wpcf7');
+
+  wpcf7Elms.forEach(form => {
+    form.addEventListener('wpcf7mailsent', function () {
+      const btn = form.querySelector('.wpcf7-submit');
+      const btnText = btn.innerHTML;
+
+      btn.innerHTML = 'Отправлено';
+
+      setTimeout(() => {
+        btn.innerHTML = btnText;
+      }, 4000);
+    }, false);
+  });
+
   function setObjectFormFields() {
     const outerObjectType = document.querySelector('#object-type-outer');
     const outerObjectArea = document.querySelector('#object-area-outer');
@@ -398,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const checkbox = event.target;
         const value = checkbox.dataset.value;
-        const field = group.querySelector('.js-filter');
+        const field = group.querySelector('input[type=hidden]');
         const checkboxes = group.querySelectorAll('[data-value]');
 
         checkboxes.forEach(control => {
