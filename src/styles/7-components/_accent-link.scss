@@ -3,12 +3,16 @@
    ========================================================================== */
 
 .accent-link {
+  padding: 0;
+  border: 0;
   font-weight: 800;
   line-height: 1.15;
   text-transform: uppercase;
   text-decoration: underline;
   text-decoration-color: rgba($primary, 0.3);
   text-underline-offset: 3px;
+  color: $primary;
+  background: transparent;
   transition:
     color 0.3s ease-in-out,
     text-decoration-color 0.3s ease-in-out;

@@ -48,7 +48,7 @@ header.header.js-header(class=(bodyClass == 'home-page') ? "header--transparent"
           span.phone-list__text Пн-Пт с 10:00 до 18:00
         li.phone-list__item
           a.phone-list__link(href="") 8 (800) 123-45-67
-          a.accent-link(href="") Перезвоните мне
+          button.accent-link(data-toggle="modal" data-target="#modal-callback") Перезвоните мне
 
     button.btn.btn-icon.header__burger.js-toggle-menu(aria-expanded="false" aria-label="Меню" aria-controls="mobile-nav")
       +icon('bars')
@@ -56,7 +56,7 @@ header.header.js-header(class=(bodyClass == 'home-page') ? "header--transparent"
   .header-bar.header__footer
     a.header__contact(href="") 8 (800) 123-45-67
     form.form.search-form.header__search
-      input.form-control.form-control--search.form-control--outline-light(type='text' placeholder='Поиск полезной информации')
+      input.form-control.form-control--light.form-control--search.form-control--outline-light(type='text' placeholder='Поиск полезной информации')
 
   .header__mobile.mobile-nav.js-mobile-nav#mobile-nav
     .mobile-nav__inner
@@ -76,4 +76,4 @@ header.header.js-header(class=(bodyClass == 'home-page') ? "header--transparent"
             span.phone-list__text Пн-Пт с 10:00 до 18:00
           li.phone-list__item
             a.phone-list__link(href="") 8 (800) 123-45-67
-            a.accent-link(href="") Перезвоните мне
+            button.accent-link(data-toggle="modal" data-target="#modal-callback") Перезвоните мне

@@ -360,21 +360,18 @@ initLightbox();
 /**
  * Form
  */
-document.addEventListener('DOMContentLoaded', function () {
-  const wpcf7Elms = document.querySelectorAll('.wpcf7');
+jQuery(function ($) {
+  var wpcf7Elms = document.querySelectorAll('.wpcf7');
 
   wpcf7Elms.forEach(form => {
     form.addEventListener('wpcf7mailsent', function () {
-      const btn = form.querySelector('.wpcf7-submit');
-      const btnText = btn.innerHTML;
-
-      btn.innerHTML = 'Отправлено';
-
-      setTimeout(() => {
-        btn.innerHTML = btnText;
-      }, 4000);
+      $('.modal.show').modal('hide');
+      $('#modal-success').modal('show');
     }, false);
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
 
   function setObjectFormFields() {
     const outerObjectType = document.querySelector('#object-type-outer');

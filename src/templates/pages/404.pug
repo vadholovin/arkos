@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Страница 404'
+  - var bodyClass = '404-page'
+
+block content
+  include ../components/header/header
+  main.content-wrapper
+    include ../components/no-page/no-page
+  include ../components/footer/footer

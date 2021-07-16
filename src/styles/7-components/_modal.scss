@@ -1,0 +1,74 @@
+/* ==========================================================================
+   #MODAL
+   ========================================================================== */
+
+//
+
+.modal {
+
+  .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.modal-header {
+  display: block;
+
+  .modal--form & {
+    padding-bottom: 15px;
+  }
+}
+
+.modal-body {
+
+  .modal--form & {
+    padding-top: 0;
+
+    @include mq($until: sm) {
+      padding-bottom: 24px;
+    }
+  }
+
+  .modal--respond & {
+    min-height: 350px;
+
+    @include mq($from: md) {
+      min-height: 550px;
+    }
+  }
+}
+
+.modal-title {
+  font-weight: normal;
+  font-size: rem(20px);
+
+  @include mq($from: md) {
+    font-size: rem(25px);
+  }
+}
+
+.modal__form {
+
+  .small {
+    font-size: rem(14px);
+    opacity: 0.7;
+  }
+}
+
+.modal-respond {
+  max-width: 260px;
+}
+
+.modal-respond__text {
+  font-size: rem(26px);
+  line-height: 1.2;
+}

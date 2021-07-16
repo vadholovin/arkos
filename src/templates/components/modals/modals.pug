@@ -1,0 +1,70 @@
+//- Обратный звонок
+.modal.modal--form.fade#modal-callback(tabindex='-1')
+  .modal-dialog.modal-dialog-centered
+    .modal-content.bg-secondary.text-light
+      .modal-header
+        h5.modal-title.text-center Мы перезвоним Вам, просто оставьте свой номер телефона
+        button.close(type='button' data-dismiss='modal' aria-label='Закрыть')
+          span(aria-hidden='true')
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      .modal-body
+        form.form.modal__form
+          .form-group
+            input.form-control.bg-light(type='tel' placeholder='Ваш номер телефона')
+          button.btn.btn-primary.btn-block.wpcf7-submit.mb-3.mb-md-4(type="submit") Перезвонить мне
+          p.small.text-center.mb-0 Нажимая кнопку “отправить” вы  соглашаетесь с политикой обратботки персональных данных и условиями конфиденциальности
+
+//- Заявка на расчет
+.modal.modal--form.fade#modal-calc(tabindex='-1')
+  .modal-dialog.modal-dialog-centered
+    .modal-content.bg-secondary.text-light
+      .modal-header
+        h5.modal-title.text-center Оставьте заявку на рассчет и обсуждение Вашего проекта
+        button.close(type='button' data-dismiss='modal' aria-label='Закрыть')
+          span(aria-hidden='true')
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      .modal-body
+        form.form.modal__form
+          .form-group
+            input.form-control.bg-light(type='text' placeholder='Ваше имя')
+          .form-group
+            input.form-control.bg-light(type='email' placeholder='Ваш e-mail')
+          .form-group
+            input.form-control.bg-light(type='tel' placeholder='Ваш номер телефона')
+          button.btn.btn-primary.btn-block.wpcf7-submit.mb-3.mb-md-4(type="submit") Обсудить проект
+          p.small.text-center.mb-0 Нажимая кнопку “отправить” вы  соглашаетесь с политикой обратботки персональных данных и условиями конфиденциальности
+
+//- Заказ услуги
+.modal.modal--form.fade#modal-order(tabindex='-1')
+  .modal-dialog.modal-dialog-centered
+    .modal-content.bg-secondary.text-light
+      .modal-header
+        h5.modal-title.text-center Заказать услугу
+        button.close(type='button' data-dismiss='modal' aria-label='Закрыть')
+          span(aria-hidden='true')
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      .modal-body
+        form.form.modal__form
+          .form-group
+            input.form-control.bg-light(type='text' placeholder='Ваше имя')
+          .form-group
+            input.form-control.bg-light(type='email' placeholder='Ваш e-mail')
+          .form-group
+            input.form-control.bg-light(type='tel' placeholder='Ваш номер телефона')
+          button.btn.btn-primary.btn-block.wpcf7-submit.mb-3.mb-md-4(type="submit") Обсудить проект
+          p.small.text-center.mb-0 Нажимая кнопку “отправить” вы  соглашаетесь с политикой обратботки персональных данных и условиями конфиденциальности
+
+//- Success
+.modal.modal--respond.fade#modal-success(tabindex='-1')
+  .modal-dialog.modal-dialog-centered
+    .modal-content.bg-secondary.text-light
+      .modal-body.d-flex.flex-column.align-items-center.justify-content-center
+        button.close(type='button' data-dismiss='modal' aria-label='Закрыть')
+          span(aria-hidden='true')
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+        .modal-respond.d-flex.flex-column.align-items-center.text-center
+          <svg class="modal-respond__icon d-block mb-4" width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M84.7144 25.4143L38.1215 72.0072L16.9429 50.8286" stroke="#5AAF62" stroke-width="8.47144" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          p.modal-respond__text.mb-0 Ваша заявка успешно отправлена. Ожидайте звонка.
+
+
