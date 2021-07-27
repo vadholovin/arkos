@@ -47,12 +47,14 @@
   }
 }
 
-.project-filter__controls {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .project-filter__controls {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
 .project-filter__controls--years {
+  display: flex;
+  flex-wrap: wrap;
   margin-left: -3px;
   margin-right: -3px;
   margin-bottom: -6px;
@@ -63,17 +65,26 @@
 }
 
 .project-filter__controls--types {
-  margin-left: -6px;
-  margin-right: -6px;
-  margin-bottom: -12px;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 4px;
+  gap: 4px;
+  // margin-left: -6px;
+  // margin-right: -6px;
+  // margin-bottom: -12px;
 
   @include mq($until: lg) {
     display: none;
   }
 
-  > * {
-    margin: 0 6px 12px 6px;
+  @include mq($from: xl) {
+    grid-gap: 12px;
+    gap: 12px;
   }
+
+  // > * {
+  //   margin: 0 6px 12px 6px;
+  // }
 }
 
 .project-filter {
@@ -122,7 +133,8 @@
 }
 
 .project-filter-card {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-filter-card__label {
@@ -130,7 +142,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-width: 155px;
+  // min-width: 155px;
+  height: 100%;
   padding: 12px 5px;
   background-color: #fff;
   cursor: pointer;
@@ -168,7 +181,7 @@
   height: 40px;
 
   @include mq($from: 1200px) {
-    height: 50px;
+    height: 30px;
   }
 
   svg {
@@ -179,13 +192,17 @@
 
 .project-filter-card__title {
   font-weight: bold;
-  font-size: rem(12px);
+  font-size: rem(9px);
   line-height: 1.1;
   text-transform: uppercase;
   word-break: break-word;
 
   @include mq($from: 1200px) {
-    font-size: rem(13px);
+    font-size: rem(10px);
+  }
+
+  @include mq($from: xl) {
+    font-size: rem(11px);
   }
 }
 

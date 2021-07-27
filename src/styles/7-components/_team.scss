@@ -73,6 +73,27 @@
   }
 }
 
+.team-list {
+  display: grid;
+  grid-gap: 30px;
+  gap: 30px;
+  margin-bottom: 0;
+
+  @include list-unstyled;
+
+  @include mq($from: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq($from: md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mq($from: lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .team-card {
   display: flex;
   flex-direction: column;
@@ -122,6 +143,8 @@
 }
 
 .team-card__body {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   padding: 15px;
   border-radius: 0 0 3px 3px;
@@ -162,6 +185,7 @@
   display: grid;
   grid-gap: 10px;
   gap: 10px;
+  margin-top: auto;
   margin-bottom: 0;
   @include list-unstyled;
 

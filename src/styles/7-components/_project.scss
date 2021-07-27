@@ -80,15 +80,42 @@
 }
 
 .project-slide {
+  cursor: pointer;
+
+  @include on-event {
+    img {
+      filter: none;
+    }
+  }
 
   &::before {
     padding-top: percentage(340 / 600);
   }
+
+  img {
+    filter: brightness(0.6);
+
+    @include basic-transition((filter));
+  }
 }
 
 .project-thumb {
+  cursor: pointer;
+
+  @include on-event {
+    img {
+      filter: none;
+    }
+  }
+
   &::before {
     padding-top: percentage(116 / 197);
+  }
+
+  img {
+    filter: brightness(0.6);
+
+    @include basic-transition((filter));
   }
 }
 

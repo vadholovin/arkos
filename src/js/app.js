@@ -338,22 +338,22 @@ jQuery(function ($) {
  * Lightbox
  */
 document.addEventListener('DOMContentLoaded', function () {
-function initLightbox() {
-  const videoLightbox = GLightbox({
-    selector: '.js-lightbox-video',
-    touchNavigation: true,
-    loop: true,
-    autoplayVideos: true,
-  });
+  function initLightbox() {
+    const videoLightbox = GLightbox({
+      selector: '.js-lightbox-video',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+    });
 
-  const imageLightbox = GLightbox({
-    selector: '.js-lightbox-image',
-    touchNavigation: true,
-    loop: true,
-  });
-}
+    const imageLightbox = GLightbox({
+      selector: '.js-lightbox-image',
+      touchNavigation: true,
+      loop: true,
+    });
+  }
 
-initLightbox();
+  initLightbox();
 });
 
 
